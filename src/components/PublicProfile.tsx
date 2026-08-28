@@ -21,7 +21,7 @@ export function PublicProfile({ profile, links }: PublicProfileProps) {
         );
       case "instagram":
         return (
-          <svg className="w-5 h-5 text-[#E4405F]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
             <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
             <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
             <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
@@ -30,24 +30,24 @@ export function PublicProfile({ profile, links }: PublicProfileProps) {
       case "twitter":
       case "x":
         return (
-          <svg className="w-5 h-5 text-[#1DA1F2]" viewBox="0 0 24 24" fill="currentColor">
+          <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
             <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
           </svg>
         );
       case "linkedin":
         return (
-          <svg className="w-5 h-5 text-[#0A66C2]" viewBox="0 0 24 24" fill="currentColor">
+          <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
             <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z" />
           </svg>
         );
       case "youtube":
         return (
-          <svg className="w-5 h-5 text-[#FF0000]" viewBox="0 0 24 24" fill="currentColor">
+          <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
             <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
           </svg>
         );
       default:
-        return <Globe className="w-5 h-5 text-[#06B6D4]" />;
+        return <Globe className="w-5 h-5" />;
     }
   };
 
@@ -57,53 +57,47 @@ export function PublicProfile({ profile, links }: PublicProfileProps) {
 
   return (
     <div
-      data-theme={profile.theme || "dark"}
-      className="min-h-screen flex flex-col justify-between items-center p-6 md:p-12 max-w-xl mx-auto selection:bg-[var(--fg)] selection:text-[var(--bg)]"
+      data-theme={profile.theme || "pine"}
+      className="min-h-screen flex flex-col justify-between items-center p-6 md:p-12 max-w-xl mx-auto"
     >
-      <div className="w-full flex flex-col items-center gap-8 py-8">
-        {/* Social Story Avatar Ring */}
-        <div className="relative group">
-          <div className="absolute -inset-1 rounded-full bg-gradient-to-r from-[#F43F5E] via-[#EC4899] to-[#8B5CF6] opacity-90 blur-md group-hover:opacity-100 transition duration-500 animate-pulse" />
-          <div className="relative w-28 h-28 rounded-full p-1 bg-gradient-to-tr from-[#EC4899] via-[#8B5CF6] to-[#06B6D4] shadow-2xl overflow-hidden flex items-center justify-center">
-            {profile.avatar_url ? (
-              <img
-                src={profile.avatar_url}
-                alt={profile.display_name || profile.username}
-                className="w-full h-full object-cover rounded-full"
-              />
-            ) : (
-              <div className="w-full h-full rounded-full bg-[#0A0814] flex items-center justify-center">
-                <span className="font-bold text-4xl gradient-text uppercase">
-                  {(profile.display_name || profile.username)[0]}
-                </span>
-              </div>
-            )}
-          </div>
+      <div className="w-full flex flex-col items-center gap-6 py-6">
+        {/* Avatar */}
+        <div className="w-24 h-24 rounded-full p-1 bg-white shadow-2xl flex items-center justify-center">
+          {profile.avatar_url ? (
+            <img
+              src={profile.avatar_url}
+              alt={profile.display_name || profile.username}
+              className="w-full h-full object-cover rounded-full"
+            />
+          ) : (
+            <div className="w-full h-full rounded-full bg-[var(--fg)] text-[var(--bg)] flex items-center justify-center">
+              <span className="font-extrabold text-3xl uppercase">
+                {(profile.display_name || profile.username)[0]}
+              </span>
+            </div>
+          )}
         </div>
 
         {/* User Info */}
-        <div className="text-center flex flex-col items-center gap-2">
-          <h1 className="text-3xl sm:text-4xl font-extrabold tracking-tight gradient-text">
+        <div className="text-center flex flex-col items-center gap-1.5">
+          <h1 className="text-3xl font-extrabold tracking-tight text-[var(--fg)]">
             {profile.display_name || `@${profile.username}`}
           </h1>
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[var(--line-2)] border border-purple-500/30">
-            <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping" />
-            <span className="font-mono text-xs text-purple-300 font-semibold tracking-wider">
-              @{profile.username}
-            </span>
-          </div>
+          <p className="font-mono text-sm font-bold text-[var(--muted)]">
+            @{profile.username}
+          </p>
 
           {profile.bio && (
-            <p className="text-sm sm:text-base text-[var(--fg-2)] max-w-md mt-2 leading-relaxed font-medium">
+            <p className="text-base text-[var(--fg-2)] max-w-md mt-1 leading-relaxed font-semibold">
               {profile.bio}
             </p>
           )}
         </div>
 
-        {/* Links Stack */}
+        {/* Linktree Link Stack */}
         <div className="w-full flex flex-col gap-4 mt-6">
           {links.length === 0 ? (
-            <div className="text-center p-8 rounded-2xl border border-dashed border-[var(--line-2)] font-mono text-xs text-[var(--muted)]">
+            <div className="text-center p-8 rounded-3xl border-2 border-dashed border-[var(--line)] font-bold text-sm text-[var(--muted)]">
               No links added yet.
             </div>
           ) : (
@@ -114,29 +108,24 @@ export function PublicProfile({ profile, links }: PublicProfileProps) {
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => handleLinkClick(link)}
-                className="group w-full p-4 rounded-2xl border border-[var(--line-2)] bg-[var(--card-bg)] backdrop-blur-xl hover:border-[#EC4899] hover:shadow-[0_0_30px_rgba(236,72,153,0.3)] transition-all duration-300 flex items-center justify-between hover:-translate-y-1"
+                className="group w-full py-4 px-6 rounded-full bg-[var(--fg)] text-[var(--bg)] font-extrabold text-base hover:scale-[1.03] transition-transform duration-300 flex items-center justify-between shadow-xl"
               >
-                <div className="flex items-center gap-4">
-                  <div className="w-10 h-10 rounded-xl bg-purple-950/50 border border-purple-500/30 flex items-center justify-center group-hover:scale-110 transition-transform">
-                    {getIcon(link.icon)}
-                  </div>
-                  <span className="font-bold text-base tracking-wide group-hover:text-[#EC4899] transition-colors">
-                    {link.title}
-                  </span>
+                <div className="flex items-center gap-3">
+                  <span>{getIcon(link.icon)}</span>
+                  <span>{link.title}</span>
                 </div>
-                <ExternalLink className="w-5 h-5 text-purple-400 group-hover:text-[#EC4899] group-hover:translate-x-1 transition-all" />
+                <ExternalLink className="w-5 h-5 opacity-70 group-hover:opacity-100 transition-opacity" />
               </a>
             ))
           )}
         </div>
       </div>
 
-      {/* VYB Branding Footer */}
-      <footer className="pt-8 font-mono text-xs text-[var(--muted)] flex items-center gap-2">
+      {/* Footer */}
+      <footer className="pt-8 font-extrabold text-sm text-[var(--fg)] flex items-center gap-2">
         <span>Powered by</span>
-        <Link href="/" className="font-extrabold gradient-text hover:underline inline-flex items-center gap-1">
-          <span>VYB</span>
-          <span className="text-xs">↗</span>
+        <Link href="/" className="underline hover:opacity-80">
+          VYB ↗
         </Link>
       </footer>
     </div>

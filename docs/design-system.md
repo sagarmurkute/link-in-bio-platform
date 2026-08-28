@@ -1,26 +1,23 @@
-# VYB Design System — Joyful Social Media Aesthetics
+# VYB Design System — Linktree Color Palette & Aesthetics
 
-## Vibrant Atmosphere & Color Palette
+## Linktree Signature Color System
 
-VYB features a high-energy, joyful social media visual aesthetic with glowing gradient accents, glassmorphic cards, and radiant background atmospheres.
+VYB incorporates Linktree's iconic color palette, rounded pill buttons, and central claim bar architecture.
 
-### Core Color Tokens
-- **Background (`--bg`)**: `#0A0814` (Deep Radiant Obsidian)
-- **Foreground (`--fg`)**: `#FFFFFF` (Pure Bright White)
-- **Secondary Text (`--fg-2`)**: `#F3E8FF` (Soft Lavender Text)
-- **Muted Accent (`--muted`)**: `#A78BFA` (Vibrant Violet)
-- **Deep Muted (`--muted-2`)**: `#6D28D9` (Rich Purple)
-- **Border Overlay (`--line`)**: `rgba(216, 180, 254, 0.15)`
-- **Vibrant Accent Border (`--line-2`)**: `rgba(236, 72, 153, 0.3)`
-
-### Signature Gradients
-- **Electric Joy Gradient**: `linear-gradient(135deg, #F43F5E 0%, #EC4899 25%, #8B5CF6 60%, #06B6D4 100%)`
-- **Radiant Amber Gradient**: `linear-gradient(135deg, #F59E0B 0%, #F43F5E 40%, #D946EF 100%)`
+### Primary Palette Tokens
+- **Linktree Lime (`--linktree-lime`)**: `#D2E823` (Electric Lime Green)
+- **Deep Pine (`--linktree-pine`)**: `#254F1A` (Deep Forest Green)
+- **Bright Violet (`--linktree-purple`)**: `#7800FF` (Electric Purple)
+- **Hot Pink (`--linktree-magenta`)**: `#FF1493` (Magenta Pink)
+- **Warm Yellow (`--linktree-yellow`)**: `#EFF06C` (Sunshine Yellow)
+- **Off-black (`--linktree-dark`)**: `#1E2330` (Dark Slate)
 
 ---
 
-## Typography
+## Typography & UI Elements
 
-- **Headlines**: `Instrument Serif` (Google Fonts) & `Plus Jakarta Sans` for bold titles.
-- **Body & UI**: `Plus Jakarta Sans` (Google Fonts, weights 500/600/700/800).
-- **Monospace Tags**: `Geist Mono` — Used for social badges, handle indicators, and status tags.
+- **Headlines**: `Plus Jakarta Sans` (weights 800/900 for extra bold punchy headings).
+- **Body & Subtitles**: `Plus Jakarta Sans` (weights 600/700).
+- **Monospace Elements**: `Geist Mono` for URL prefixes, handles, and system tags.
+- **Claim Bar Component**: Central pill container (`getvyb.vercel.app/` prefix + input + `Claim your VYB` button).
+- **Link Cards**: Full rounded pill containers (`rounded-full py-4 px-6 font-extrabold`) with hover scale motion.

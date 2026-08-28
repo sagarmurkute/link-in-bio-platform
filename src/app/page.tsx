@@ -6,175 +6,96 @@ import { WaitlistForm } from "@/components/WaitlistForm";
 export default function HomePage() {
   return (
     <div className="page loaded">
-      {/* Radiant Background Atmosphere */}
+      {/* Linktree Atmosphere */}
       <div className="bg-wrap">
         <FluidCanvas />
         <div className="bg-vignette" />
-        <div className="bg-grid" />
-        <div className="noise" />
       </div>
 
       {/* Header */}
       <header className="header">
         <Link href="/" className="brand-link">
           <div className="brand-mark">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M4 5l8 14 8-14" />
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
             </svg>
           </div>
-          <span className="brand-name mono upper text-lg font-extrabold tracking-widest gradient-text">
-            VYB
-          </span>
+          <span>VYB</span>
         </Link>
 
-        <div className="header-right">
-          <div className="header-meta mono upper">
-            <span className="text-[#EC4899]">2026</span>
-            <span className="opacity-40">/</span>
-            <span className="text-[#8B5CF6]">PRIVATE BUILD</span>
-          </div>
-
-          <div className="status mono upper">
-            <span className="status-dot" />
-            <span>Coming Soon ✨</span>
-          </div>
-
+        <div className="flex items-center gap-4">
           <ThemeToggle />
-
-          <Link
-            href="/login"
-            className="mono upper transition-all hover:scale-105"
-            style={{
-              padding: "8px 20px",
-              borderRadius: "999px",
-              background: "linear-gradient(135deg, #EC4899 0%, #8B5CF6 100%)",
-              color: "#FFFFFF",
-              fontWeight: 700,
-              textDecoration: "none",
-              boxShadow: "0 4px 16px rgba(236, 72, 153, 0.4)"
-            }}
-          >
-            Sign In ↗
+          <Link href="/login" className="linktree-btn linktree-btn-purple">
+            Log in
+          </Link>
+          <Link href="/login" className="linktree-btn hidden sm:inline-flex">
+            Sign up free
           </Link>
         </div>
       </header>
 
-      {/* Main Content (Two-Column Layout) */}
-      <main className="main">
-        {/* Content Column (Left) */}
-        <div className="content">
-          <div className="kicker">
-            <span className="text-base">⚡️</span>
-            <span className="mono upper">Announcement 001 / 2026 — Link-in-Bio System</span>
-          </div>
-
-          <h1 className="headline serif">
-            <span className="l"><span className="gradient-text">Something new</span></span>
-            <span className="l"><span className="italic font-light text-[var(--fg)]">is coming.</span></span>
+      {/* Main Content (Hero & Live Card Stack) */}
+      <main className="main py-12">
+        {/* Left Column: Hero Announcement */}
+        <div className="flex flex-col justify-center">
+          <h1 className="headline">
+            Everything you are.<br />
+            In one simple link in bio.
           </h1>
 
           <p className="sub">
-            The internet gave us a thousand places to be. <strong className="gradient-text-alt">VYB</strong> is a quiet, crafted space to bring them together into one simple link that feels like you.
+            Join 50M+ creators using VYB for their link in bio. One link to help you share everything you create, curate and sell from your Instagram, TikTok, Twitter, YouTube and other profiles.
           </p>
 
-          <div className="divider" />
-
-          <div className="manifesto">
-            <div className="manifesto-index mono upper">01</div>
-            <div className="manifesto-content-wrap">
-              <div className="manifesto-text">
-                One identity.<br />
-                <span className="gradient-text font-serif italic">Everything you.</span>
-              </div>
-              <Link href="/manifesto" className="manifesto-link mono upper mt-2 inline-flex items-center gap-1.5 text-[#EC4899] hover:underline font-bold">
-                Read manifesto ↗
-              </Link>
-            </div>
-          </div>
-
-          <div className="stay">
-            <div className="stay-top mb-3 flex items-center gap-2">
-              <span className="text-base">🚀</span>
-              <span className="stay-label mono upper text-[#A855F7] font-bold">Claim Handle Early — Private Access</span>
-            </div>
-            <div className="stay-desc mono text-sm mb-4">Leave your email to claim your custom handle before launch.</div>
-            <WaitlistForm />
-          </div>
+          <WaitlistForm />
         </div>
 
-        {/* Vertical Line */}
-        <div className="vline" />
-
-        {/* Information Panel (Right Rail) */}
-        <div className="rail">
-          <div className="info-panel">
-            {/* About VYB Section */}
-            <div className="panel-section">
-              <div className="panel-tag mono upper">WHY VYB EXISTS</div>
-              <h2 className="panel-heading serif">Your identity shouldn't be scattered across 10+ URLs.</h2>
-              <p className="panel-quote mono">“Instagram, GitHub, YouTube, portfolio, and work destinations combined into getvyb.vercel.app/you”</p>
-            </div>
-
-            {/* How It Works Section */}
-            <div className="panel-section">
-              <div className="panel-tag mono upper">HOW IT WORKS</div>
-              <div className="steps-list">
-                <div className="step-item">
-                  <div className="step-header mono upper">01 — Claim Handle</div>
-                  <p className="step-text">Reserve your unique username (e.g. getvyb.vercel.app/sagar).</p>
-                </div>
-                <div className="step-item">
-                  <div className="step-header mono upper">02 — Connect Links</div>
-                  <p className="step-text">Bring your code, socials, store, and media into one stack.</p>
-                </div>
-                <div className="step-item">
-                  <div className="step-header mono upper">03 — Share Anywhere</div>
-                  <p className="step-text">One URL representing your full digital presence.</p>
-                </div>
+        {/* Right Column: Live Linktree Creator Profile Stack */}
+        <div className="flex justify-center items-center">
+          <div className="linktree-card-stack">
+            {/* Profile Avatar Header */}
+            <div className="flex flex-col items-center text-center gap-3 pb-4 border-b border-gray-200">
+              <div className="w-20 h-20 rounded-full p-1 bg-gradient-to-tr from-[#7800FF] via-[#FF1493] to-[#D2E823] shadow-lg">
+                <img
+                  src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=300&auto=format&fit=crop&q=80"
+                  alt="Creator Avatar"
+                  className="w-full h-full object-cover rounded-full"
+                />
+              </div>
+              <div>
+                <h3 className="font-extrabold text-xl text-[#1E2330]">@sagar</h3>
+                <p className="text-xs font-semibold text-gray-500">Digital Creator & Developer ⚡️</p>
               </div>
             </div>
 
-            {/* Built For Section */}
-            <div className="panel-section">
-              <div className="panel-tag mono upper">BUILT FOR CREATORS</div>
-              <div className="audience-tags">
-                <span className="audience-tag">Creators ✨</span>
-                <span className="audience-tag">Designers 🎨</span>
-                <span className="audience-tag">Developers 💻</span>
-                <span className="audience-tag">Freelancers 🚀</span>
-                <span className="audience-tag">Musicians 🎵</span>
-                <span className="audience-tag">Businesses 💼</span>
-              </div>
-            </div>
-
-            {/* Product Philosophy */}
-            <div className="panel-philosophy">
-              <span className="philosophy-text serif">One identity. One place. One link.</span>
-            </div>
-
-            {/* Status Footer */}
-            <div className="panel-footer mono upper">
-              <div className="panel-status-left flex items-center gap-2">
-                <span className="status-dot" />
-                <span className="status-label">VYB / 2026</span>
-              </div>
-              <span className="status-coming font-bold text-[#EC4899]">PRIVATE ACCESS</span>
+            {/* Stacked Link Pills */}
+            <div className="flex flex-col gap-3 pt-2">
+              <a href="#" className="card-pill">
+                <span>🔥 Latest YouTube Video</span>
+                <span>↗</span>
+              </a>
+              <a href="#" className="card-pill card-pill-purple">
+                <span>💻 GitHub Open Source Projects</span>
+                <span>↗</span>
+              </a>
+              <a href="#" className="card-pill card-pill-pink">
+                <span>📸 Instagram Portfolio & Reel</span>
+                <span>↗</span>
+              </a>
             </div>
           </div>
         </div>
       </main>
 
       {/* Footer */}
-      <footer className="footer mono upper">
-        <div className="footer-left">
-          <span>© 2026 VYB. All rights reserved.</span>
+      <footer className="footer">
+        <div>
+          <span>© 2026 VYB Platform. Inspired by modern link-in-bio design.</span>
         </div>
-        <div className="footer-right">
-          <Link href="/manifesto" className="footer-link">Read manifesto →</Link>
-          <span style={{ opacity: 0.3 }}>/</span>
-          <a href="https://getvyb.vercel.app" target="_blank" rel="noopener noreferrer" className="footer-link">Website</a>
-          <span style={{ opacity: 0.3 }}>/</span>
+        <div className="flex items-center gap-6">
+          <Link href="/manifesto" className="footer-link">Manifesto</Link>
           <a href="https://github.com/sagarmurkute" target="_blank" rel="noopener noreferrer" className="footer-link">GitHub</a>
+          <a href="https://x.com/SagarMurku54849" target="_blank" rel="noopener noreferrer" className="footer-link">X</a>
         </div>
       </footer>
     </div>
