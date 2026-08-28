@@ -4,7 +4,7 @@
 
 VYB is an upcoming account-based link-in-bio platform designed for creators, designers, developers, freelancers, musicians, businesses, and students to bring their entire digital presence together into one simple, elegant URL.
 
-**Live Announcement Site:** [vyb.vercel.app](https://vyb.vercel.app)
+**Live Announcement Site:** [getvyb.vercel.app](https://getvyb.vercel.app)
 
 ---
 
@@ -15,7 +15,7 @@ The internet gave us a thousand places to be — Instagram, GitHub, LinkedIn, Yo
 A person creates a VYB account, chooses their username, and gets one clean public URL:
 
 ```
-vyb.vercel.app/sagar
+getvyb.vercel.app/sagar
 ```
 
 ---
@@ -65,7 +65,7 @@ VYB/
 
 Built with intention by **Sagar Murkute**:
 
-- **Official Platform:** [vyb.vercel.app](https://vyb.vercel.app)
+- **Official Platform:** [getvyb.vercel.app](https://getvyb.vercel.app)
 - **GitHub:** [@sagarmurkute](https://github.com/sagarmurkute)
 - **Instagram:** [@_sagar.coding](https://www.instagram.com/_sagar.coding)
 - **X (Twitter):** [@SagarMurku54849](https://x.com/SagarMurku54849)
