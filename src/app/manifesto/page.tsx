@@ -37,7 +37,7 @@ export default function ManifestoPage() {
           </span>
           <h1 className="font-serif text-5xl sm:text-7xl leading-[0.96] text-[var(--fg)]">
             The internet gave us a thousand places to be. <br />
-            <span class="italic text-[var(--fg-2)]">VYB is a place to bring them together.</span>
+            <span className="italic text-[var(--fg-2)]">VYB is a place to bring them together.</span>
           </h1>
         </div>
 

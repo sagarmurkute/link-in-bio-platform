@@ -4,7 +4,6 @@ import { useState } from "react";
 import { Profile, LinkItem } from "@/types/database";
 import { addLinkAction, toggleLinkActiveAction, deleteLinkAction, updateProfileBioAction } from "@/app/actions/links";
 import { signOutAction } from "@/app/actions/auth";
-import Link from "next/link";
 import {
   Plus,
   Trash2,
@@ -13,12 +12,6 @@ import {
   MousePointerClick,
   LogOut,
   Globe,
-  Github,
-  Instagram,
-  Twitter,
-  Linkedin,
-  Youtube,
-  Settings,
   Sparkles,
   ToggleLeft,
   ToggleRight
