@@ -5,7 +5,7 @@ import { WaitlistForm } from "@/components/WaitlistForm";
 export default function HomePage() {
   return (
     <div className="min-h-screen flex flex-col justify-between bg-[#FFFFE3] text-[#111111] px-6 lg:px-12">
-      {/* Top Navigation */}
+      {/* Top Navigation Bar */}
       <header className="w-full max-w-7xl mx-auto h-24 flex items-center justify-between">
         <Link href="/" className="flex items-center gap-3 no-underline">
           <div className="w-10 h-10 rounded-full bg-[#FF0000] text-white flex items-center justify-center shadow-md">
@@ -27,27 +27,27 @@ export default function HomePage() {
         </div>
       </header>
 
-      {/* Ultra Clean Hero Core */}
-      <main className="w-full max-w-7xl mx-auto my-auto py-12 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-        {/* Left Column */}
-        <div className="flex flex-col items-start gap-6">
-          <h1 className="text-6xl sm:text-7xl lg:text-8xl leading-[0.98] font-black tracking-tight text-[#111111]">
-            Everything you are.<br />
-            <span className="text-[#FF0000]">In one link.</span>
-          </h1>
+      {/* Centered Hero Core Stack */}
+      <main className="w-full max-w-4xl mx-auto my-auto py-12 flex flex-col items-center text-center gap-8">
+        {/* Headline */}
+        <h1 className="text-6xl sm:text-7xl lg:text-8xl leading-[0.98] font-black tracking-tight text-[#111111]">
+          Everything you are.<br />
+          <span className="text-[#FF0000]">In one link.</span>
+        </h1>
 
-          <p className="text-xl text-[#444444] font-medium leading-relaxed max-w-lg">
-            One link to help you share everything you create, curate, and sell across all your platforms.
-          </p>
+        {/* Subtitle */}
+        <p className="text-xl text-[#444444] font-medium leading-relaxed max-w-xl">
+          One simple link to share everything you create, curate, and sell across all your platforms.
+        </p>
 
-          <div className="w-full max-w-[540px] pt-2">
-            <WaitlistForm />
-          </div>
+        {/* Centered Claim Bar */}
+        <div className="w-full max-w-[540px] flex justify-center">
+          <WaitlistForm />
         </div>
 
-        {/* Right Column: Clean Card Preview */}
-        <div className="flex justify-center items-center">
-          <div className="profile-card w-full max-w-[400px]">
+        {/* Centered Profile Card Preview */}
+        <div className="w-full max-w-[380px] mt-6">
+          <div className="profile-card w-full">
             <div className="flex flex-col items-center text-center gap-3 pb-5 border-b border-[rgba(200,200,180,0.4)]">
               <div className="w-20 h-20 rounded-full p-[3px] bg-[#FF0000] shadow-md">
                 <img
@@ -80,7 +80,7 @@ export default function HomePage() {
         </div>
       </main>
 
-      {/* Minimal Clean Footer */}
+      {/* Minimal Footer */}
       <footer className="w-full max-w-7xl mx-auto h-20 flex items-center justify-between border-t border-[rgba(200,200,180,0.4)] text-xs font-bold text-[#888888]">
         <div>© 2026 VYB</div>
         <div className="flex items-center gap-6">
