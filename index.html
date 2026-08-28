@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Vyb — One account. One link. Everything you.</title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+  
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Custom Mouse Cursor -->
+  <div class="cursor" id="cursor">
+    <div class="cursor-dot"></div>
+    <div class="cursor-ring"></div>
+  </div>
+
+  <!-- Page Loader -->
+  <div class="loader" id="loader">
+    <div class="loader-inner">
+      <div class="brand-link">
+        <div class="brand-mark">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 5l8 14 8-14"/>
+          </svg>
+        </div>
+        <div class="brand-name upper" id="loaderBrand">VYB</div>
+      </div>
+      <div class="loader-percent mono upper" id="loaderPercent">00%</div>
+      <div class="loader-line" id="loaderLine"></div>
+    </div>
+  </div>
+
+  <!-- Background Elements -->
+  <div class="bg-wrap">
+    <canvas id="fluid"></canvas>
+    <div class="bg-vignette"></div>
+    <div class="bg-grid"></div>
+    <div class="noise"></div>
+  </div>
+
+  <!-- Main Container -->
+  <div class="page" id="page">
+    <!-- Header -->
+    <header class="header">
+      <a href="index.html" class="brand-link">
+        <div class="brand-mark">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 5l8 14 8-14"/>
+          </svg>
+        </div>
+        <span class="brand-name mono upper" id="brandName">VYB</span>
+      </a>
+      <div class="header-right">
+        <div class="header-meta mono upper">
+          <span id="timeIST">—</span>
+          <span>Thane, IN</span>
+        </div>
+        <div class="status mono upper">
+          <span class="status-dot"></span>
+          <span>Coming Soon...</span>
+        </div>
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme" title="Toggle Light/Dark Theme">
+          <svg class="sun-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+          <svg class="moon-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main">
+      <div class="content">
+        <div class="kicker">
+          <div class="kicker-line"></div>
+          <div class="kicker-text mono upper">Announcement 001 / 2026 — Account-based Link System</div>
+        </div>
+        <h1 class="headline serif">
+          <span class="l"><span>Something</span></span>
+          <span class="l"><span class="thin">new is</span></span>
+          <span class="l"><span><i>coming.</i></span></span>
+        </h1>
+        <p class="sub">A quiet place for everything you are online. Not another profile. <strong>Your profile.</strong> One link that feels like you.</p>
+        <div class="divider"></div>
+        <div class="manifesto">
+          <div class="manifesto-index mono upper">01</div>
+          <div class="manifesto-content-wrap">
+            <div class="manifesto-text">One link.<br><span>Everything you.</span></div>
+            <a href="manifesto.html" class="manifesto-link mono upper">Read the manifesto →</a>
+          </div>
+        </div>
+        <div class="stay">
+          <div class="stay-top">
+            <div class="stay-dot"></div>
+            <div class="stay-label mono upper">Stay Tuned — Invitation Only</div>
+          </div>
+          <div class="stay-desc mono">We’re opening slowly. Leave your address if you want to be early. No spam. No pitch.</div>
+          <div class="waitlist" id="waitlist">
+            <input type="email" id="emailInput" placeholder="your@email.com" autocomplete="email" spellcheck="false" />
+            <button class="waitlist-btn" id="waitlistBtn">
+              <span>Join waitlist</span>
+              <span>↗</span>
+            </button>
+            <div class="waitlist-success mono upper">You’re on the list — we’ll reach out quietly.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="vline"></div>
+
+      <!-- Right Information Panel -->
+      <div class="rail">
+        <div class="info-panel">
+          <!-- About VYB Section -->
+          <div class="panel-section">
+            <div class="panel-tag mono upper">About VYB</div>
+            <h2 class="panel-heading serif">VYB is a new way to bring your online presence together.</h2>
+            <p class="panel-quote mono">“Create one personal space for the things you want people to find, follow, and remember.”</p>
+          </div>
+
+          <div class="panel-divider"></div>
+
+          <!-- How It Works Section -->
+          <div class="panel-section">
+            <div class="panel-tag mono upper">How It Works</div>
+            <div class="steps-list">
+              <div class="step-item">
+                <div class="step-header mono upper">01 — Create</div>
+                <p class="step-text">Create your VYB account and claim your username.</p>
+              </div>
+              <div class="step-item">
+                <div class="step-header mono upper">02 — Build</div>
+                <p class="step-text">Bring your links, profiles, work, and important destinations together.</p>
+              </div>
+              <div class="step-item">
+                <div class="step-header mono upper">03 — Share</div>
+                <p class="step-text">Give people one simple VYB link to find you.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="panel-divider"></div>
+
+          <!-- Built For Section -->
+          <div class="panel-section">
+            <div class="panel-tag mono upper">Built For</div>
+            <div class="audience-tags mono">
+              <span class="audience-tag">Creators</span>
+              <span class="tag-sep">·</span>
+              <span class="audience-tag">Designers</span>
+              <span class="tag-sep">·</span>
+              <span class="audience-tag">Developers</span>
+              <span class="tag-sep">·</span>
+              <span class="audience-tag">Freelancers</span>
+              <span class="tag-sep">·</span>
+              <span class="audience-tag">Musicians</span>
+              <span class="tag-sep">·</span>
+              <span class="audience-tag">Businesses</span>
+              <span class="tag-sep">·</span>
+              <span class="audience-tag">Students</span>
+            </div>
+          </div>
+
+          <div class="panel-divider"></div>
+
+          <!-- Product Philosophy -->
+          <div class="panel-philosophy">
+            <span class="philosophy-text serif">One identity. One place. One link.</span>
+          </div>
+
+          <!-- Coming Soon Status Footer -->
+          <div class="panel-footer mono upper">
+            <div class="panel-status-left">
+              <span class="status-dot-pulse"></span>
+              <span class="status-label">VYB / 001</span>
+            </div>
+            <div class="panel-status-right">
+              <span class="status-coming">Coming Soon</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer mono upper">
+      <div class="footer-left">
+        <span>© 2026 <span id="footerBrand">Vyb</span></span>
+        <span style="opacity:0.4">—</span>
+        <span>Made with intention.</span>
+      </div>
+      <div class="footer-right">
+        <a href="manifesto.html" class="footer-link">Read manifesto →</a>
+        <span style="opacity:0.3">/</span>
+        <a href="https://vyb.vercel.app" target="_blank" rel="noopener noreferrer" class="footer-link">Website</a>
+        <span style="opacity:0.3">/</span>
+        <a href="https://github.com/sagarmurkute" target="_blank" rel="noopener noreferrer" class="footer-link">GitHub</a>
+        <span style="opacity:0.3">/</span>
+        <a href="https://x.com/SagarMurku54849" target="_blank" rel="noopener noreferrer" class="footer-link">X</a>
+        <span style="opacity:0.3">/</span>
+        <a href="https://www.instagram.com/_sagar.coding" target="_blank" rel="noopener noreferrer" class="footer-link">Instagram</a>
+        <span style="opacity:0.3">/</span>
+        <a href="https://linkedin.com/in/sagarmurkute" target="_blank" rel="noopener noreferrer" class="footer-link">LinkedIn</a>
+        <span style="opacity:0.3">/</span>
+        <a href="https://www.youtube.com/@SagarMurkute9" target="_blank" rel="noopener noreferrer" class="footer-link">YouTube</a>
+        <span style="opacity:0.3">/</span>
+      </div>
+    </footer>
+  </div>
+
+  <!-- JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>
