@@ -4,7 +4,6 @@ import { useState } from "react";
 import Link from "next/link";
 import { loginAction, signupAction } from "@/app/actions/auth";
 import { ThemeToggle } from "@/components/ThemeToggle";
-import { CustomCursor } from "@/components/CustomCursor";
 import { FluidCanvas } from "@/components/FluidCanvas";
 
 export default function LoginPage() {
@@ -28,8 +27,6 @@ export default function LoginPage() {
 
   return (
     <div className="page loaded">
-      <CustomCursor />
-
       {/* Background Elements */}
       <div className="bg-wrap">
         <FluidCanvas />

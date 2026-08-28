@@ -1,14 +1,11 @@
 import Link from "next/link";
 import { ThemeToggle } from "@/components/ThemeToggle";
-import { CustomCursor } from "@/components/CustomCursor";
 import { FluidCanvas } from "@/components/FluidCanvas";
 import { WaitlistForm } from "@/components/WaitlistForm";
 
 export default function HomePage() {
   return (
     <div className="page loaded">
-      <CustomCursor />
-      
       {/* Background Elements */}
       <div className="bg-wrap">
         <FluidCanvas />
