@@ -5,58 +5,60 @@ import { WaitlistForm } from "@/components/WaitlistForm";
 
 export default function HomePage() {
   return (
-    <div className="page loaded min-h-screen flex flex-col justify-between">
+    <div className="relative min-h-screen flex flex-col justify-between bg-[#FFFFE3] text-[#000000] selection:bg-[#FF0000] selection:text-[#FFFFFF]">
       {/* Background Atmosphere */}
       <div className="bg-wrap">
         <FluidCanvas />
         <div className="bg-vignette" />
       </div>
 
-      {/* Full Production Navigation Header */}
-      <header className="header border-b border-[#D6D6BE]/40 bg-[#FFFFE3]/80 backdrop-blur-md sticky top-0 z-50">
-        <Link href="/" className="brand-link">
-          <div className="brand-mark">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
-            </svg>
+      {/* Production Navigation Header */}
+      <header className="sticky top-0 z-50 w-full bg-[#FFFFE3]/90 backdrop-blur-md border-b border-[#D6D6BE]/40">
+        <div className="max-w-7xl mx-auto px-6 lg:px-12 h-20 flex items-center justify-between">
+          <Link href="/" className="flex items-center gap-3 text-decoration-none text-[#000000]">
+            <div className="w-10 h-10 rounded-full bg-[#FF0000] text-white flex items-center justify-center shadow-md">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
+              </svg>
+            </div>
+            <span className="font-black text-2xl tracking-tight">VYB</span>
+          </Link>
+
+          {/* Navigation Links */}
+          <nav className="hidden md:flex items-center gap-8 text-sm font-bold">
+            <Link href="/manifesto" className="hover:text-[#FF0000] transition-colors">Manifesto</Link>
+            <a href="#features" className="hover:text-[#FF0000] transition-colors">Features</a>
+            <a href="#templates" className="hover:text-[#FF0000] transition-colors">Templates</a>
+            <Link href="/pricing" className="hover:text-[#FF0000] transition-colors">Pricing</Link>
+          </nav>
+
+          <div className="flex items-center gap-3">
+            <ThemeToggle />
+            <Link href="/login" className="vyb-btn vyb-btn-secondary text-xs sm:text-sm h-10 px-5">
+              Log in
+            </Link>
+            <Link href="/signup" className="vyb-btn text-xs sm:text-sm h-10 px-5 hidden sm:inline-flex">
+              Sign up free
+            </Link>
           </div>
-          <span>VYB</span>
-        </Link>
-
-        {/* Center Nav Links */}
-        <nav className="hidden md:flex items-center gap-8 text-sm font-bold text-[#000000]">
-          <Link href="/manifesto" className="hover:text-[#FF0000] transition-colors">Manifesto</Link>
-          <a href="#features" className="hover:text-[#FF0000] transition-colors">Features</a>
-          <a href="#templates" className="hover:text-[#FF0000] transition-colors">Templates</a>
-          <Link href="/pricing" className="hover:text-[#FF0000] transition-colors">Pricing</Link>
-        </nav>
-
-        <div className="flex items-center gap-3">
-          <ThemeToggle />
-          <Link href="/login" className="vyb-btn vyb-btn-secondary text-sm h-11 px-6">
-            Log in
-          </Link>
-          <Link href="/signup" className="vyb-btn text-sm h-11 px-6 hidden sm:inline-flex">
-            Sign up free
-          </Link>
         </div>
       </header>
 
       {/* Hero Section */}
       <section className="w-full max-w-7xl mx-auto px-6 lg:px-12 py-16 lg:py-24 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-        {/* Left Column: Value Pitch & Handle Bar */}
+        {/* Left Column: Headline & Claim Bar */}
         <div className="flex flex-col items-start gap-6">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#FF0000]/10 text-[#FF0000] font-extrabold text-xs tracking-wider uppercase">
             <span className="w-2 h-2 rounded-full bg-[#FF0000] animate-ping" />
             <span>VYB 2.0 is Live — One link for everything</span>
           </div>
 
-          <h1 className="headline text-6xl sm:text-7xl lg:text-8xl leading-tight font-black tracking-tight text-[#000000]">
+          <h1 className="text-5xl sm:text-6xl lg:text-7xl leading-[1.02] font-black tracking-tight text-[#000000]">
             Everything you are.<br />
             <span className="text-[#FF0000]">In one simple link.</span>
           </h1>
 
-          <p className="sub text-lg sm:text-xl text-[#2A2A2A] font-semibold leading-relaxed max-w-xl">
+          <p className="text-lg sm:text-xl text-[#2A2A2A] font-semibold leading-relaxed max-w-xl">
             Join creators, developers, designers, and professionals using VYB. Connect all your social media, stores, code, and portfolios into one simple URL.
           </p>
 
@@ -65,7 +67,7 @@ export default function HomePage() {
           </div>
 
           {/* Social Proof */}
-          <div className="flex items-center gap-4 pt-4 text-xs font-bold text-[#7A7A7A]">
+          <div className="flex items-center gap-4 pt-2 text-xs font-bold text-[#7A7A7A]">
             <div className="flex -space-x-2">
               <div className="w-8 h-8 rounded-full bg-[#FF0000] text-white flex items-center justify-center font-black border-2 border-[#FFFFE3]">S</div>
               <div className="w-8 h-8 rounded-full bg-[#000000] text-white flex items-center justify-center font-black border-2 border-[#FFFFE3]">A</div>
@@ -77,7 +79,7 @@ export default function HomePage() {
 
         {/* Right Column: Live Interactive Profile Card Stack */}
         <div className="flex justify-center items-center">
-          <div className="vyb-card-stack w-full max-w-md">
+          <div className="vyb-card-stack w-full">
             {/* Profile Avatar Header */}
             <div className="flex flex-col items-center text-center gap-3 pb-4 border-b border-[#D6D6BE]/60">
               <div className="w-20 h-20 rounded-full p-1 bg-[#FF0000] shadow-md">
@@ -189,26 +191,28 @@ export default function HomePage() {
       {/* Call to Action Banner */}
       <section className="w-full max-w-5xl mx-auto my-20 px-6">
         <div className="p-12 rounded-[40px] bg-[#FF0000] text-[#FFFFFF] text-center flex flex-col items-center gap-6 shadow-xl">
-          <h2 className="text-4xl sm:text-6xl font-black tracking-tight">Ready to claim your VYB?</h2>
-          <p className="text-lg font-semibold max-w-xl text-[#FFFFE3]">
+          <h2 className="text-4xl sm:text-5xl font-black tracking-tight">Ready to claim your VYB?</h2>
+          <p className="text-base sm:text-lg font-semibold max-w-xl text-[#FFFFE3]">
             Create your account today and connect your entire online presence in seconds.
           </p>
-          <Link href="/signup" className="vyb-btn vyb-btn-secondary text-lg h-14 px-10 mt-2">
+          <Link href="/signup" className="vyb-btn vyb-btn-secondary text-base h-12 px-8">
             Get started for free ↗
           </Link>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="footer bg-[#FFFFE3] border-t border-[#D6D6BE]/40">
-        <div>
-          <span>© 2026 VYB Platform. Full Production SaaS Website.</span>
-        </div>
-        <div className="flex items-center gap-6">
-          <Link href="/manifesto" className="footer-link">Manifesto</Link>
-          <Link href="/login" className="footer-link">Log in</Link>
-          <Link href="/signup" className="footer-link">Sign up</Link>
-          <a href="https://github.com/sagarmurkute" target="_blank" rel="noopener noreferrer" className="footer-link">GitHub</a>
+      <footer className="w-full border-t border-[#D6D6BE]/40 py-8 bg-[#FFFFE3]">
+        <div className="max-w-7xl mx-auto px-6 lg:px-12 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs font-bold text-[#555555]">
+          <div>
+            <span>© 2026 VYB Platform. Full Production Website.</span>
+          </div>
+          <div className="flex items-center gap-6">
+            <Link href="/manifesto" className="hover:text-[#FF0000] transition-colors">Manifesto</Link>
+            <Link href="/login" className="hover:text-[#FF0000] transition-colors">Log in</Link>
+            <Link href="/signup" className="hover:text-[#FF0000] transition-colors">Sign up</Link>
+            <a href="https://github.com/sagarmurkute" target="_blank" rel="noopener noreferrer" className="hover:text-[#FF0000] transition-colors">GitHub</a>
+          </div>
         </div>
       </footer>
     </div>

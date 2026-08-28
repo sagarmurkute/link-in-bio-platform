@@ -53,23 +53,16 @@
 
 * {
   box-sizing: border-box;
-  margin: 0;
-  padding: 0;
 }
 
-html {
-  background: var(--bg);
-  color: var(--fg);
-  -webkit-font-smoothing: antialiased;
-  overflow-x: hidden;
-  transition: background-color 0.4s var(--ease), color 0.4s var(--ease);
-}
-
-body {
+html, body {
   background: var(--bg);
   color: var(--fg);
   font-family: "Plus Jakarta Sans", system-ui, sans-serif;
-  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
 }
 
 .serif {
@@ -78,20 +71,12 @@ body {
 
 .mono {
   font-family: "Geist Mono", monospace;
-  letter-spacing: 0.05em;
-}
-
-.upper {
-  font-size: 11px;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  font-weight: 700;
 }
 
 /* Subtle Pill Buttons */
 .vyb-btn {
-  height: 52px;
-  padding: 0 30px;
+  height: 48px;
+  padding: 0 28px;
   border-radius: 999px;
   background: #FF0000;
   color: #FFFFFF;
@@ -100,18 +85,18 @@ body {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
-  transition: all 0.3s var(--ease);
+  gap: 8px;
+  transition: all 0.25s var(--ease);
   white-space: nowrap;
   border: none;
   cursor: pointer;
-  box-shadow: 0 6px 20px rgba(255, 0, 0, 0.25);
+  box-shadow: 0 4px 14px rgba(255, 0, 0, 0.2);
   text-decoration: none;
 }
 
 .vyb-btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 10px 28px rgba(255, 0, 0, 0.35);
+  box-shadow: 0 8px 22px rgba(255, 0, 0, 0.3);
   background: #E00000;
   color: #FFFFFF;
 }
@@ -119,40 +104,39 @@ body {
 .vyb-btn-secondary {
   background: #FFFFFF;
   color: #000000;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
 }
 
 .vyb-btn-secondary:hover {
   background: #FFFFFF;
   color: #FF0000;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
 }
 
 /* Subtle Claim Handle Bar */
 .claim-bar {
-  position: relative;
   display: flex;
   align-items: center;
   width: 100%;
   max-width: 520px;
-  height: 62px;
+  height: 60px;
   border-radius: 999px;
-  padding: 5px 5px 5px 24px;
+  padding: 4px 4px 4px 20px;
   background: #FFFFFF;
-  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.08);
-  transition: all 0.3s var(--ease);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+  transition: all 0.25s var(--ease);
   border: 1px solid rgba(214, 214, 190, 0.6);
 }
 
 .claim-bar:focus-within {
   transform: translateY(-2px);
-  box-shadow: 0 16px 44px rgba(255, 0, 0, 0.18);
+  box-shadow: 0 14px 38px rgba(255, 0, 0, 0.15);
   border-color: #FF0000;
 }
 
 .claim-prefix {
   font-weight: 800;
-  font-size: 16px;
+  font-size: 15px;
   color: #000000;
   white-space: nowrap;
   user-select: none;
@@ -167,7 +151,7 @@ body {
   padding: 0 8px;
   color: #000000;
   font-family: "Plus Jakarta Sans", sans-serif;
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 600;
 }
 
@@ -177,27 +161,26 @@ body {
 }
 
 .claim-btn {
-  height: 52px;
-  padding: 0 28px;
+  height: 50px;
+  padding: 0 26px;
   border-radius: 999px;
   background: #FF0000;
   color: #FFFFFF;
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 700;
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  transition: all 0.3s var(--ease);
+  transition: all 0.25s var(--ease);
   white-space: nowrap;
   border: none;
   cursor: pointer;
-  box-shadow: 0 4px 16px rgba(255, 0, 0, 0.25);
+  box-shadow: 0 4px 12px rgba(255, 0, 0, 0.2);
 }
 
 .claim-btn:hover {
   background: #E00000;
   transform: scale(1.02);
-  box-shadow: 0 8px 24px rgba(255, 0, 0, 0.35);
 }
 
 /* Background Atmosphere */
@@ -214,88 +197,44 @@ body {
   position: absolute;
   inset: 0;
   background: 
-    radial-gradient(70% 70% at 85% 15%, rgba(255, 0, 0, 0.05) 0%, transparent 60%),
-    radial-gradient(80% 80% at 15% 85%, rgba(232, 232, 210, 0.3) 0%, transparent 60%);
+    radial-gradient(70% 70% at 85% 15%, rgba(255, 0, 0, 0.04) 0%, transparent 60%),
+    radial-gradient(80% 80% at 15% 85%, rgba(232, 232, 210, 0.25) 0%, transparent 60%);
 }
 
-/* Base Page Wrapper */
-.page {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  background: #FFFFE3;
-}
-
-.header {
-  position: relative;
-  z-index: 50;
-  width: 100%;
-  max-width: 1440px;
-  margin: 0 auto;
-  padding: 24px 40px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.brand-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  text-decoration: none;
-  color: #000000;
-  font-size: 28px;
-  font-weight: 900;
-  letter-spacing: -0.04em;
-}
-
-.brand-mark {
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  background: #FF0000;
-  color: #FFFFFF;
-  display: grid;
-  place-items: center;
-  box-shadow: 0 6px 18px rgba(255, 0, 0, 0.3);
-}
-
-/* Subtle VYB Social Link Cards */
+/* Subtle Card Stack */
 .vyb-card-stack {
   display: flex;
   flex-direction: column;
   gap: 16px;
   width: 100%;
-  max-width: 420px;
-  margin: 0 auto;
-  padding: 32px;
-  border-radius: 36px;
+  max-width: 400px;
+  padding: 28px;
+  border-radius: 32px;
   background: #FFFFFF;
   color: #000000;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.06);
   border: 1px solid rgba(214, 214, 190, 0.5);
 }
 
 .card-pill {
   width: 100%;
-  padding: 16px 24px;
+  padding: 14px 20px;
   border-radius: 999px;
   background: #FFFFE3;
   color: #000000;
   font-weight: 700;
-  font-size: 15px;
+  font-size: 14px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  transition: all 0.3s ease;
+  transition: all 0.25s ease;
   text-decoration: none;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
 }
 
 .card-pill:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(255, 0, 0, 0.15);
+  box-shadow: 0 6px 18px rgba(255, 0, 0, 0.12);
   background: #FF0000;
   color: #FFFFFF;
 }
@@ -303,42 +242,9 @@ body {
 .card-pill-red {
   background: #FF0000;
   color: #FFFFFF;
-  box-shadow: 0 4px 16px rgba(255, 0, 0, 0.25);
+  box-shadow: 0 4px 14px rgba(255, 0, 0, 0.2);
 }
 
 .card-pill-red:hover {
   background: #E00000;
-  box-shadow: 0 8px 24px rgba(255, 0, 0, 0.35);
-}
-
-/* Footer */
-.footer {
-  width: 100%;
-  max-width: 1440px;
-  margin: 0 auto;
-  padding: 28px 40px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-top: 1px solid rgba(214, 214, 190, 0.5);
-  color: #555555;
-  font-size: 13px;
-  font-weight: 600;
-}
-
-.footer-link {
-  color: #000000;
-  text-decoration: none;
-  transition: color 0.2s ease;
-}
-
-.footer-link:hover {
-  color: #FF0000;
-}
-
-@media (max-width: 640px) {
-  .header { padding: 20px; }
-  .footer { padding: 20px; flex-direction: column; gap: 16px; }
-  .claim-bar { height: auto; flex-direction: column; padding: 12px; border-radius: 28px; gap: 10px; }
-  .claim-btn { width: 100%; justify-content: center; }
 }
