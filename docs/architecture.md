@@ -1,4 +1,4 @@
-# VYB System Architecture
+# VYB System Architecture & Page Map
 
 ## Architecture Overview
 
@@ -20,6 +20,25 @@ VYB is built using Next.js App Router, leveraging Server Components, Client Comp
                   └───────────────────────────────┘
 ```
 
+## Page Map & Route Architecture
+
+| Route | Route Group | Description | Status |
+| :--- | :--- | :--- | :--- |
+| `/` | `(marketing)` | VYB Home / Hero Page & Claim Bar | Active |
+| `/manifesto` | `(marketing)` | Philosophy & Editorial Manifesto | Active |
+| `/pricing` | `(marketing)` | Plan Tiers & Pro Features | Planned |
+| `/about` | `(marketing)` | About VYB Platform | Planned |
+| `/login` | `(auth)` | User Authentication & Sign In | Active |
+| `/signup` | `(auth)` | Account Registration & Handle Claim | Active |
+| `/forgot-password` | `(auth)` | Password Reset Request | Planned |
+| `/reset-password` | `(auth)` | Password Reset Token Handler | Planned |
+| `/dashboard` | `(dashboard)` | Control Center & Profile Overview | Active |
+| `/editor` | `(dashboard)` | Interactive Profile Builder & Link Stack Manager | Active |
+| `/analytics` | `(dashboard)` | Profile Views & Link Click Insights | Active |
+| `/settings` | `(dashboard)` | User Account & Handle Settings | Active |
+| `/[username]` | Public Handle | Dynamic Public Profile Engine (`getvyb.vercel.app/username`) | Active |
+| `/api/*` | Developer API | Public & Private Platform Endpoints | Planned |
+
 ## Directory Map
 
 ```
@@ -28,28 +47,28 @@ VYB/
 │   └── rules/
 │       └── execution-rules.md     # Antigravity Execution Rules
 ├── docs/
-│   ├── architecture.md            # System Architecture
-│   ├── database.md                # Database Schema & RLS
+│   ├── vision.md                  # Product Vision & Philosophy
 │   ├── roadmap.md                 # 20-Phase Roadmap
+│   ├── architecture.md            # System Architecture & Page Map
+│   ├── database.md                # Database Schema & RLS
 │   ├── design-system.md           # Tokens & Theme Specification
+│   ├── security.md                # Security Protocols & RLS
 │   └── decisions/                 # Architectural Decision Records
-├── public/
-│   └── legacy/                    # Static site archive
 ├── src/
 │   ├── app/
-│   │   ├── [username]/page.tsx    # Dynamic public link page
-│   │   ├── actions/               # Server Actions (auth, links, analytics)
-│   │   ├── auth/callback/         # Auth token exchange callback
-│   │   ├── dashboard/page.tsx     # Authenticated user dashboard
-│   │   ├── login/page.tsx         # Sign in & sign up page
-│   │   ├── manifesto/page.tsx     # Editorial manifesto page
-│   │   ├── globals.css            # Luxury design tokens & rules
-│   │   └── page.tsx               # Announcement hero page
-│   ├── components/                # React UI components
-│   ├── lib/
-│   │   └── supabase/              # Browser & server Supabase clients
-│   └── types/
-│       └── database.ts            # TypeScript interfaces
+│   │   ├── (marketing)/           # Landing page, Manifesto, Pricing, About
+│   │   ├── (auth)/                # Login, Signup, Password Recovery
+│   │   ├── (dashboard)/           # Dashboard, Editor, Analytics, Settings
+│   │   ├── [username]/            # Dynamic public link page
+│   │   ├── layout.tsx
+│   │   └── globals.css
+│   ├── components/
+│   │   ├── profile/               # ProfileHeader, ProfileLinks, ProfileFooter
+│   │   ├── marketing/
+│   │   ├── auth/
+│   │   └── dashboard/
+│   ├── config/                    # Site & Navigation configuration
+│   └── types/                     # TypeScript interfaces
 └── supabase/
     └── schema.sql                 # PostgreSQL migration script
 ```

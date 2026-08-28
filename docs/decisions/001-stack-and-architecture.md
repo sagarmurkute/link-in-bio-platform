@@ -19,6 +19,25 @@ VYB is an account-based link-in-bio platform designed to unify scattered online 
 | **Icons** | Lucide React + Inline SVGs | Scalable vector icons for social media and navigation |
 | **Hosting** | Vercel | Global edge deployment, fast TTFB, and Vercel Analytics |
 
+## Page Map & Route Architecture
+
+| Route | Route Group | Description | Status |
+| :--- | :--- | :--- | :--- |
+| `/` | `(marketing)` | VYB Home / Hero Page & Claim Bar | Active |
+| `/manifesto` | `(marketing)` | Philosophy & Editorial Manifesto | Active |
+| `/pricing` | `(marketing)` | Plan Tiers & Pro Features | Planned |
+| `/about` | `(marketing)` | About VYB Platform | Planned |
+| `/login` | `(auth)` | User Authentication & Sign In | Active |
+| `/signup` | `(auth)` | Account Registration & Handle Claim | Active |
+| `/forgot-password` | `(auth)` | Password Reset Request | Planned |
+| `/reset-password` | `(auth)` | Password Reset Token Handler | Planned |
+| `/dashboard` | `(dashboard)` | Control Center & Profile Overview | Active |
+| `/editor` | `(dashboard)` | Interactive Profile Builder & Link Stack Manager | Active |
+| `/analytics` | `(dashboard)` | Profile Views & Link Click Insights | Active |
+| `/settings` | `(dashboard)` | User Account & Handle Settings | Active |
+| `/[username]` | Public Handle | Dynamic Public Profile Engine (`getvyb.vercel.app/username`) | Active |
+| `/api/*` | Developer API | Public & Private Platform Endpoints | Planned |
+
 ## Rules Enforced
 1. Build phase by phase with verification after each milestone.
 2. Never silently change the technology stack.
