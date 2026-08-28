@@ -13,8 +13,8 @@ interface PublicProfileProps {
 export function PublicProfile({ profile, links }: PublicProfileProps) {
   return (
     <div
-      data-theme={profile.theme || "pine"}
-      className="min-h-screen flex flex-col justify-between items-center p-6 md:p-12 max-w-xl mx-auto"
+      data-theme={profile.theme || "ivory"}
+      className="min-h-screen flex flex-col justify-between items-center p-6 md:p-12 max-w-xl mx-auto bg-[#FFFFE3]"
     >
       <div className="w-full flex flex-col items-center gap-6 py-6">
         <ProfileHeader profile={profile} />

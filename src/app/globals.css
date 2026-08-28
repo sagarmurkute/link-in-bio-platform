@@ -2,44 +2,54 @@
 @import "tailwindcss";
 
 :root {
-  /* Linktree Signature Color System */
-  --linktree-lime: #D2E823;
-  --linktree-pine: #254F1A;
-  --linktree-purple: #7800FF;
-  --linktree-pink: #E9C0E9;
-  --linktree-magenta: #FF1493;
-  --linktree-yellow: #EFF06C;
-  --linktree-dark: #1E2330;
+  /* VYB Official Brand Colors */
+  --vyb-red: #FF0000;
+  --vyb-red-600: #E00000;
+  --vyb-red-100: #FFD6D6;
+  --vyb-ivory-50: #FFFFFB;
+  --vyb-ivory-100: #FFFFF4;
+  --vyb-ivory-200: #FFFFE3;
+  --vyb-ivory-300: #F5F5D6;
+  --vyb-warm-gray: #E8E8D2;
+  --vyb-border: #D6D6BE;
+  --vyb-white: #FFFFFF;
+  --vyb-black: #000000;
   
-  --bg: #254F1A;
-  --fg: #D2E823;
-  --fg-2: #FFFFFF;
-  --muted: #A3E635;
-  --muted-2: #4D7C0F;
-  --line: rgba(210, 232, 35, 0.2);
-  --line-2: rgba(210, 232, 35, 0.4);
-  --card-bg: rgba(37, 79, 26, 0.85);
+  --text-primary: #000000;
+  --text-secondary: #2A2A2A;
+  --text-body: #555555;
+  --text-muted: #7A7A7A;
+  --text-disabled: #B5B5B5;
+  --text-on-red: #FFFFFF;
+
+  --bg: #FFFFE3; /* 70% Signature Ivory */
+  --fg: #000000; /* Jet Black */
+  --fg-2: #2A2A2A;
+  --muted: #7A7A7A;
+  --line: #D6D6BE;
+  --line-2: #000000;
+  --card-bg: #FFFFFF; /* 20% Pure White Cards */
   
   --ease: cubic-bezier(0.16, 1, 0.3, 1);
   --ease-out: cubic-bezier(0.33, 1, 0.68, 1);
 }
 
-[data-theme="purple"] {
-  --bg: #7800FF;
-  --fg: #E9C0E9;
-  --fg-2: #FFFFFF;
-  --muted: #F472B6;
-  --line: rgba(233, 192, 233, 0.25);
-  --card-bg: rgba(120, 0, 255, 0.85);
+[data-theme="red"] {
+  --bg: #FF0000; /* Alternate Section */
+  --fg: #FFFFFF;
+  --fg-2: #FFFFE3;
+  --muted: #FFB3B3;
+  --line: rgba(255, 255, 255, 0.3);
+  --card-bg: #FFFFE3;
 }
 
 [data-theme="dark"] {
-  --bg: #1E2330;
-  --fg: #D2E823;
-  --fg-2: #FFFFFF;
-  --muted: #9CA3AF;
-  --line: rgba(255, 255, 255, 0.1);
-  --card-bg: rgba(30, 35, 48, 0.85);
+  --bg: #000000;
+  --fg: #FFFFE3;
+  --fg-2: #E8E8D2;
+  --muted: #7A7A7A;
+  --line: #2A2A2A;
+  --card-bg: #121212;
 }
 
 * {
@@ -50,6 +60,7 @@
 
 html {
   background: var(--bg);
+  color: var(--fg);
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
   transition: background-color 0.4s var(--ease), color 0.4s var(--ease);
@@ -78,13 +89,13 @@ body {
   font-weight: 800;
 }
 
-/* Linktree Pill Buttons */
-.linktree-btn {
+/* VYB Pill Buttons (10% Primary Red Accent) */
+.vyb-btn {
   height: 54px;
   padding: 0 32px;
   border-radius: 999px;
-  background: var(--fg);
-  color: var(--bg);
+  background: #FF0000;
+  color: #FFFFFF;
   font-size: 16px;
   font-weight: 800;
   display: inline-flex;
@@ -93,30 +104,30 @@ body {
   gap: 10px;
   transition: all 0.3s var(--ease);
   white-space: nowrap;
-  border: none;
+  border: 2px solid #000000;
   cursor: pointer;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  box-shadow: 4px 4px 0px #000000;
   text-decoration: none;
 }
 
-.linktree-btn:hover {
-  transform: scale(1.04);
-  box-shadow: 0 12px 32px rgba(210, 232, 35, 0.4);
+.vyb-btn:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0px #000000;
+  background: #E00000;
+  color: #FFFFFF;
+}
+
+.vyb-btn-secondary {
   background: #FFFFFF;
-  color: #254F1A;
+  color: #000000;
 }
 
-.linktree-btn-purple {
-  background: #7800FF;
-  color: #FFFFFF;
+.vyb-btn-secondary:hover {
+  background: #FFFFE3;
+  color: #FF0000;
 }
 
-.linktree-btn-purple:hover {
-  background: #9333EA;
-  color: #FFFFFF;
-}
-
-/* Linktree Claim Handle Bar */
+/* VYB Claim Handle Bar */
 .claim-bar {
   position: relative;
   display: flex;
@@ -127,19 +138,21 @@ body {
   border-radius: 999px;
   padding: 6px 6px 6px 24px;
   background: #FFFFFF;
-  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.25);
+  border: 3px solid #000000;
+  box-shadow: 6px 6px 0px #000000;
   transition: all 0.3s var(--ease);
 }
 
 .claim-bar:focus-within {
-  transform: scale(1.02);
-  box-shadow: 0 16px 44px rgba(210, 232, 35, 0.5);
+  transform: translate(-2px, -2px);
+  box-shadow: 8px 8px 0px #FF0000;
+  border-color: #FF0000;
 }
 
 .claim-prefix {
-  font-weight: 800;
+  font-weight: 900;
   font-size: 16px;
-  color: #254F1A;
+  color: #000000;
   white-space: nowrap;
   user-select: none;
 }
@@ -151,14 +164,14 @@ body {
   border: none;
   outline: none;
   padding: 0 8px;
-  color: #1E2330;
+  color: #000000;
   font-family: "Plus Jakarta Sans", sans-serif;
   font-size: 16px;
   font-weight: 700;
 }
 
 .claim-bar input::placeholder {
-  color: #9CA3AF;
+  color: #7A7A7A;
   font-weight: 500;
 }
 
@@ -166,8 +179,8 @@ body {
   height: 52px;
   padding: 0 28px;
   border-radius: 999px;
-  background: #254F1A;
-  color: #D2E823;
+  background: #FF0000;
+  color: #FFFFFF;
   font-size: 15px;
   font-weight: 800;
   display: inline-flex;
@@ -175,14 +188,13 @@ body {
   gap: 8px;
   transition: all 0.3s var(--ease);
   white-space: nowrap;
-  border: none;
+  border: 2px solid #000000;
   cursor: pointer;
 }
 
 .claim-btn:hover {
-  background: #7800FF;
-  color: #FFFFFF;
-  transform: scale(1.03);
+  background: #000000;
+  color: #FFFFE3;
 }
 
 /* Background Atmosphere */
@@ -192,14 +204,15 @@ body {
   z-index: -5;
   overflow: hidden;
   pointer-events: none;
+  background: #FFFFE3;
 }
 
 .bg-vignette {
   position: absolute;
   inset: 0;
   background: 
-    radial-gradient(80% 80% at 10% 10%, rgba(210, 232, 35, 0.15) 0%, transparent 60%),
-    radial-gradient(70% 70% at 90% 80%, rgba(120, 0, 255, 0.2) 0%, transparent 60%);
+    radial-gradient(70% 70% at 90% 10%, rgba(255, 0, 0, 0.08) 0%, transparent 60%),
+    radial-gradient(80% 80% at 10% 90%, rgba(232, 232, 210, 0.4) 0%, transparent 60%);
 }
 
 /* Layout */
@@ -208,6 +221,7 @@ body {
   display: flex;
   flex-direction: column;
   position: relative;
+  background: #FFFFE3;
 }
 
 .header {
@@ -227,7 +241,7 @@ body {
   align-items: center;
   gap: 10px;
   text-decoration: none;
-  color: var(--fg);
+  color: #000000;
   font-size: 28px;
   font-weight: 900;
   letter-spacing: -0.04em;
@@ -237,11 +251,12 @@ body {
   width: 44px;
   height: 44px;
   border-radius: 50%;
-  background: var(--fg);
-  color: var(--bg);
+  background: #FF0000;
+  color: #FFFFFF;
+  border: 2px solid #000000;
   display: grid;
   place-items: center;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+  box-shadow: 3px 3px 0px #000000;
 }
 
 .main {
@@ -262,20 +277,20 @@ body {
   letter-spacing: -0.04em;
   margin-bottom: 28px;
   font-weight: 900;
-  color: var(--fg);
+  color: #000000;
 }
 
 .sub {
   max-width: 520px;
   font-size: 20px;
   line-height: 1.5;
-  color: var(--fg-2);
+  color: #2A2A2A;
   font-weight: 600;
   margin-bottom: 36px;
 }
 
-/* Linktree Social Cards */
-.linktree-card-stack {
+/* VYB Social Link Cards */
+.vyb-card-stack {
   display: flex;
   flex-direction: column;
   gap: 16px;
@@ -285,37 +300,43 @@ body {
   padding: 32px;
   border-radius: 36px;
   background: #FFFFFF;
-  color: #1E2330;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  color: #000000;
+  border: 4px solid #000000;
+  box-shadow: 12px 12px 0px #FF0000;
 }
 
 .card-pill {
   width: 100%;
   padding: 16px 24px;
   border-radius: 999px;
-  background: #254F1A;
-  color: #D2E823;
+  background: #FFFFE3;
+  color: #000000;
+  border: 2px solid #000000;
   font-weight: 800;
   font-size: 15px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  transition: transform 0.2s ease;
+  transition: all 0.2s ease;
   text-decoration: none;
+  box-shadow: 3px 3px 0px #000000;
 }
 
 .card-pill:hover {
-  transform: scale(1.03);
-}
-
-.card-pill-purple {
-  background: #7800FF;
+  transform: translate(-2px, -2px);
+  box-shadow: 5px 5px 0px #FF0000;
+  background: #FF0000;
   color: #FFFFFF;
 }
 
-.card-pill-pink {
-  background: #FF1493;
+.card-pill-red {
+  background: #FF0000;
   color: #FFFFFF;
+}
+
+.card-pill-red:hover {
+  background: #000000;
+  color: #FFFFE3;
 }
 
 /* Footer */
@@ -327,20 +348,20 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-top: 1px solid var(--line);
-  color: var(--fg);
+  border-top: 2px solid #D6D6BE;
+  color: #555555;
   font-size: 13px;
   font-weight: 700;
 }
 
 .footer-link {
-  color: var(--fg);
+  color: #000000;
   text-decoration: none;
-  transition: opacity 0.2s ease;
+  transition: color 0.2s ease;
 }
 
 .footer-link:hover {
-  opacity: 0.8;
+  color: #FF0000;
 }
 
 @media (max-width: 1024px) {
