@@ -6,7 +6,7 @@ import { WaitlistForm } from "@/components/WaitlistForm";
 export default function HomePage() {
   return (
     <div className="page loaded">
-      {/* Background Elements */}
+      {/* Radiant Background Atmosphere */}
       <div className="bg-wrap">
         <FluidCanvas />
         <div className="bg-vignette" />
@@ -18,40 +18,43 @@ export default function HomePage() {
       <header className="header">
         <Link href="/" className="brand-link">
           <div className="brand-mark">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
               <path d="M4 5l8 14 8-14" />
             </svg>
           </div>
-          <span className="brand-name mono upper">VYB</span>
+          <span className="brand-name mono upper text-lg font-extrabold tracking-widest gradient-text">
+            VYB
+          </span>
         </Link>
 
         <div className="header-right">
           <div className="header-meta mono upper">
-            <span>2026</span>
-            <span>/</span>
-            <span>PRIVATE BUILD</span>
+            <span className="text-[#EC4899]">2026</span>
+            <span className="opacity-40">/</span>
+            <span className="text-[#8B5CF6]">PRIVATE BUILD</span>
           </div>
 
           <div className="status mono upper">
             <span className="status-dot" />
-            <span>Coming Soon...</span>
+            <span>Coming Soon ✨</span>
           </div>
 
           <ThemeToggle />
 
           <Link
             href="/login"
-            className="mono upper"
+            className="mono upper transition-all hover:scale-105"
             style={{
-              padding: "6px 14px",
+              padding: "8px 20px",
               borderRadius: "999px",
-              border: "1px solid var(--line-2)",
-              background: "rgba(245, 242, 237, 0.04)",
-              color: "var(--fg)",
-              textDecoration: "none"
+              background: "linear-gradient(135deg, #EC4899 0%, #8B5CF6 100%)",
+              color: "#FFFFFF",
+              fontWeight: 700,
+              textDecoration: "none",
+              boxShadow: "0 4px 16px rgba(236, 72, 153, 0.4)"
             }}
           >
-            Sign In
+            Sign In ↗
           </Link>
         </div>
       </header>
@@ -61,18 +64,17 @@ export default function HomePage() {
         {/* Content Column (Left) */}
         <div className="content">
           <div className="kicker">
-            <div className="kicker-line" />
-            <div className="kicker-text mono upper">Announcement 001 / 2026 — Account-based Link System</div>
+            <span className="text-base">⚡️</span>
+            <span className="mono upper">Announcement 001 / 2026 — Link-in-Bio System</span>
           </div>
 
           <h1 className="headline serif">
-            <span className="l"><span>Something</span></span>
-            <span className="l"><span className="thin">new is</span></span>
-            <span className="l"><span><i>coming.</i></span></span>
+            <span className="l"><span className="gradient-text">Something new</span></span>
+            <span className="l"><span className="italic font-light text-[var(--fg)]">is coming.</span></span>
           </h1>
 
           <p className="sub">
-            A quiet place for everything you are online. Not another profile. <strong>Your profile.</strong> One link that feels like you.
+            The internet gave us a thousand places to be. <strong className="gradient-text-alt">VYB</strong> is a quiet, crafted space to bring them together into one simple link that feels like you.
           </p>
 
           <div className="divider" />
@@ -80,22 +82,27 @@ export default function HomePage() {
           <div className="manifesto">
             <div className="manifesto-index mono upper">01</div>
             <div className="manifesto-content-wrap">
-              <div className="manifesto-text">One link.<br /><span>Everything you.</span></div>
-              <Link href="/manifesto" className="manifesto-link mono upper">Read the manifesto →</Link>
+              <div className="manifesto-text">
+                One identity.<br />
+                <span className="gradient-text font-serif italic">Everything you.</span>
+              </div>
+              <Link href="/manifesto" className="manifesto-link mono upper mt-2 inline-flex items-center gap-1.5 text-[#EC4899] hover:underline font-bold">
+                Read manifesto ↗
+              </Link>
             </div>
           </div>
 
           <div className="stay">
-            <div className="stay-top">
-              <div className="stay-dot" />
-              <div className="stay-label mono upper">Stay Tuned — Invitation Only</div>
+            <div className="stay-top mb-3 flex items-center gap-2">
+              <span className="text-base">🚀</span>
+              <span className="stay-label mono upper text-[#A855F7] font-bold">Claim Handle Early — Private Access</span>
             </div>
-            <div className="stay-desc mono">We’re opening slowly. Leave your address if you want to be early. No spam. No pitch.</div>
+            <div className="stay-desc mono text-sm mb-4">Leave your email to claim your custom handle before launch.</div>
             <WaitlistForm />
           </div>
         </div>
 
-        {/* Vertical Divider */}
+        {/* Vertical Line */}
         <div className="vline" />
 
         {/* Information Panel (Right Rail) */}
@@ -103,55 +110,42 @@ export default function HomePage() {
           <div className="info-panel">
             {/* About VYB Section */}
             <div className="panel-section">
-              <div className="panel-tag mono upper">About VYB</div>
-              <h2 className="panel-heading serif">VYB is a new way to bring your online presence together.</h2>
-              <p className="panel-quote mono">“Create one personal space for the things you want people to find, follow, and remember.”</p>
+              <div className="panel-tag mono upper">WHY VYB EXISTS</div>
+              <h2 className="panel-heading serif">Your identity shouldn't be scattered across 10+ URLs.</h2>
+              <p className="panel-quote mono">“Instagram, GitHub, YouTube, portfolio, and work destinations combined into getvyb.vercel.app/you”</p>
             </div>
-
-            <div className="panel-divider" />
 
             {/* How It Works Section */}
             <div className="panel-section">
-              <div className="panel-tag mono upper">How It Works</div>
+              <div className="panel-tag mono upper">HOW IT WORKS</div>
               <div className="steps-list">
                 <div className="step-item">
-                  <div className="step-header mono upper">01 — Create</div>
-                  <p className="step-text">Create your VYB account and claim your username.</p>
+                  <div className="step-header mono upper">01 — Claim Handle</div>
+                  <p className="step-text">Reserve your unique username (e.g. getvyb.vercel.app/sagar).</p>
                 </div>
                 <div className="step-item">
-                  <div className="step-header mono upper">02 — Build</div>
-                  <p className="step-text">Bring your links, profiles, work, and important destinations together.</p>
+                  <div className="step-header mono upper">02 — Connect Links</div>
+                  <p className="step-text">Bring your code, socials, store, and media into one stack.</p>
                 </div>
                 <div className="step-item">
-                  <div className="step-header mono upper">03 — Share</div>
-                  <p className="step-text">Give people one simple VYB link to find you.</p>
+                  <div className="step-header mono upper">03 — Share Anywhere</div>
+                  <p className="step-text">One URL representing your full digital presence.</p>
                 </div>
               </div>
             </div>
-
-            <div className="panel-divider" />
 
             {/* Built For Section */}
             <div className="panel-section">
-              <div className="panel-tag mono upper">Built For</div>
-              <div className="audience-tags mono">
-                <span className="audience-tag">Creators</span>
-                <span className="tag-sep">·</span>
-                <span className="audience-tag">Designers</span>
-                <span className="tag-sep">·</span>
-                <span className="audience-tag">Developers</span>
-                <span className="tag-sep">·</span>
-                <span className="audience-tag">Freelancers</span>
-                <span className="tag-sep">·</span>
-                <span className="audience-tag">Musicians</span>
-                <span className="tag-sep">·</span>
-                <span className="audience-tag">Businesses</span>
-                <span className="tag-sep">·</span>
-                <span className="audience-tag">Students</span>
+              <div className="panel-tag mono upper">BUILT FOR CREATORS</div>
+              <div className="audience-tags">
+                <span className="audience-tag">Creators ✨</span>
+                <span className="audience-tag">Designers 🎨</span>
+                <span className="audience-tag">Developers 💻</span>
+                <span className="audience-tag">Freelancers 🚀</span>
+                <span className="audience-tag">Musicians 🎵</span>
+                <span className="audience-tag">Businesses 💼</span>
               </div>
             </div>
-
-            <div className="panel-divider" />
 
             {/* Product Philosophy */}
             <div className="panel-philosophy">
@@ -160,11 +154,11 @@ export default function HomePage() {
 
             {/* Status Footer */}
             <div className="panel-footer mono upper">
-              <div className="panel-status-left">
-                <span className="status-dot-pulse" />
-                <span className="status-label">VYB / 001</span>
+              <div className="panel-status-left flex items-center gap-2">
+                <span className="status-dot" />
+                <span className="status-label">VYB / 2026</span>
               </div>
-              <span className="status-coming">COMING SOON</span>
+              <span className="status-coming font-bold text-[#EC4899]">PRIVATE ACCESS</span>
             </div>
           </div>
         </div>
