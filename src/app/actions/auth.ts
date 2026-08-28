@@ -3,6 +3,12 @@
 import { createClient } from "@/lib/supabase/server";
 import { redirect } from "next/navigation";
 
+const RESERVED_USERNAMES = [
+  "admin", "api", "login", "signup", "dashboard", "settings",
+  "help", "about", "pricing", "manifesto", "auth", "public",
+  "legacy", "carousel", "terms", "privacy", "docs", "support"
+];
+
 export async function loginAction(formData: FormData) {
   const email = formData.get("email") as string;
   const password = formData.get("password") as string;
@@ -33,9 +39,19 @@ export async function signupAction(formData: FormData) {
     return { error: "Please fill in all fields (username, email, and password)." };
   }
 
+  // Validate username format (alphanumeric and underscores only)
+  if (!/^[a-zA-Z0-9_]{3,20}$/.test(username)) {
+    return { error: "Username must be 3-20 characters long and contain only letters, numbers, and underscores." };
+  }
+
+  // Check reserved usernames
+  if (RESERVED_USERNAMES.includes(username)) {
+    return { error: `The handle @${username} is reserved by the platform. Please select another.` };
+  }
+
   const supabase = await createClient();
 
-  // Check if username is already taken
+  // Check if username is already taken in database
   const { data: existing } = await supabase
     .from("profiles")
     .select("username")

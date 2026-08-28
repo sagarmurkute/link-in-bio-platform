@@ -1,25 +1,126 @@
-# VYB Product Roadmap
+# VYB — Full Product Roadmap & Specification
 
-## Sequential Phase Sequence
+## Product Definition
 
-- [x] **00 Brand / Vision**: Defined core product philosophy ("One identity. One place. One link.") and domain `getvyb.vercel.app`.
-- [x] **01 GitHub + Vercel**: Repository initialized on GitHub (`sagarmurkute/link-in-bio-platform`) and connected to Vercel.
-- [x] **02 Production Next.js Foundation**: Bootstrapped Next.js App Router, TypeScript, Tailwind CSS, Turbopack, and ESLint.
-- [x] **03 Database**: Designed PostgreSQL schema (`profiles`, `links`, `analytics_events`) and RLS policies in `supabase/schema.sql`.
-- [x] **04 Authentication**: Implemented Supabase Auth (Email/Password & Magic Link) and Server Actions in `src/app/actions/auth.ts`.
-- [x] **05 Onboarding**: Built handle selection & account reservation during sign-up.
-- [x] **06 Username System**: Enforced unique `@username` registration and reservation checks.
-- [x] **07 Profile System**: Created database-backed user profile updating (`display_name`, `bio`, `theme`).
-- [x] **08 Link Management**: Built link stack creation, active status toggling, and deletion in `src/app/actions/links.ts`.
-- [x] **09 Public Profiles (MVP Target)**: Dynamic route `src/app/[username]/page.tsx` rendering public profile pages at `getvyb.vercel.app/username`.
-- [x] **10 Profile Customization**: Theme toggling between Dark Luxury (`#08080A`) and Warm Ivory (`#F4F0EB`).
-- [x] **11 Dashboard**: Authenticated user dashboard at `/dashboard` for managing links and settings.
-- [x] **12 Content Blocks**: Custom SVG social brand icon rendering for GitHub, Instagram, X, LinkedIn, YouTube, and Web links.
-- [x] **13 Analytics**: Real-time link click count tracking and PostgreSQL analytics events.
-- [ ] **14 SEO / Sharing**: OpenGraph meta tags, dynamic social share previews, and sitemap generation.
-- [ ] **15 Security / Performance**: Rate limiting, security headers, image optimization, and caching.
-- [ ] **16 Payments**: Stripe subscription integration for pro accounts.
-- [ ] **17 Custom Domains**: Custom domain binding for user pages.
-- [ ] **18 Moderation / Admin**: Admin moderation dashboard and handle reporting.
-- [ ] **19 API**: Public developer REST & GraphQL API.
-- [ ] **20 Ecosystem**: Developer plugins and external platform integrations.
+VYB is an account-based personal identity and link-in-bio platform.
+
+```
+Create VYB account ──> Choose username ──> Create profile ──> Add links/content ──> Customize appearance ──> Publish ──> getvyb.vercel.app/username
+```
+
+The public profile (`getvyb.vercel.app/username`) is the core product.
+
+---
+
+## Complete Phase Sequence
+
+### PHASE 0 — Product & Repository Foundation
+- **Goal**: Establish project foundation before development.
+- **Tasks**: Branding, visual direction, GitHub repo, Vercel deployment, env strategy, code quality, branch strategy, documentation.
+- **Status**: Completed ✓
+
+### PHASE 1 — VYB Brand & Marketing
+- **Goal**: Establish public presence and brand identity (*"One identity. One place. One link."*).
+- **Deliverables**: Announcement page, manifesto, carousel, design tokens, color palette.
+- **Status**: Completed ✓
+
+### PHASE 2 — Production Application Foundation
+- **Goal**: Transition prototype into production Next.js App Router application.
+- **Stack**: Next.js, React, TypeScript, Tailwind CSS, Motion, Supabase, Vercel.
+- **Status**: Completed ✓
+
+### PHASE 3 — Database Architecture
+- **Goal**: Establish relational PostgreSQL schema on Supabase (`profiles`, `links`, `analytics_events`) with Row Level Security (RLS).
+- **Status**: Completed ✓
+
+### PHASE 4 — Authentication
+- **Goal**: Users can securely register, login, sign out, and manage sessions using Supabase Auth & Zod validation.
+- **Status**: Completed ✓
+
+### PHASE 5 — User Onboarding & Username System
+- **Goal**: Seamless username selection with strict availability, case normalization, and reserved path protection.
+- **Reserved Handles**: `admin`, `api`, `login`, `signup`, `dashboard`, `settings`, `help`, `about`, `pricing`, `manifesto`, `auth`, `public`, `legacy`, `terms`, `privacy`, `docs`, `support`.
+- **Status**: Completed ✓
+
+### PHASE 6 — Profile System
+- **Goal**: Core personal profile engine (Avatar, Display Name, Bio, Links Stack).
+- **Features**: Add, edit, delete, toggle active status, and reorder links using `@dnd-kit`.
+- **Status**: Completed ✓
+
+### PHASE 7 — Public Profile Engine
+- **Goal**: Make public profiles accessible at `getvyb.vercel.app/username`.
+- **Architecture**: Shared PostgreSQL single source of truth between Dashboard and Public Pages.
+- **Status**: Completed ✓
+
+### PHASE 8 — Profile Customization
+- **Goal**: Preset theme customization (Dark Luxury `#08080A` and Warm Ivory `#F4F0EB`).
+- **Status**: Completed ✓
+
+### PHASE 9 — Dashboard (MVP Milestone Target)
+- **Goal**: Complete user control center with live link stack editor, quick actions, analytics overview, and live preview link.
+- **Status**: Completed ✓ (MVP Achieved)
+
+---
+
+### Upcoming Enhancement Phases
+
+### PHASE 10 — Content & Block Expansion
+- **Goal**: Extend profile capabilities beyond links (Heading, Text, Image, Video, YouTube, Spotify, Portfolio, Email signup).
+
+### PHASE 11 — Advanced Analytics
+- **Goal**: Comprehensive product insights (Page views, link CTR, referrers, device breakdown, top performing destinations).
+
+### PHASE 12 — SEO & Social Sharing
+- **Goal**: OpenGraph dynamic image generation, Twitter/X card metadata, custom SEO descriptions, and sitemaps.
+
+### PHASE 13 — Performance & Security Hardening
+- **Goal**: Rate limiting, URL validation, XSS protection, CSRF headers, image optimization, and caching.
+
+### PHASE 14 — Monetization & Payments
+- **Goal**: Stripe subscription integration for Pro plans (advanced themes, custom fonts, analytics, zero VYB branding).
+
+### PHASE 15 — Custom Domains
+- **Goal**: Custom domain mapping (e.g. `sagar.design` or `links.sagar.design`) via Vercel Edge routing and SSL provisioning.
+
+### PHASE 16 — Moderation & Trust
+- **Goal**: Profile reporting, link abuse blocking, admin moderation dashboard, and automated spam prevention.
+
+### PHASE 17 — Public Developer API
+- **Goal**: Public REST API (`GET /api/v1/profiles/:username`) and API key management.
+
+### PHASE 18 — Ecosystem
+- **Goal**: Developer SDKs, webhooks, embeddable VYB profile widgets, extensions, and mobile companion apps.
+
+---
+
+## System Architecture Overview
+
+```
+                         VYB Platform
+                              │
+        ┌─────────────────────┼─────────────────────┐
+        │                     │                     │
+    Marketing            Application            Public Web
+        │                     │                     │
+   Landing Page          Dashboard             /username
+   Manifesto             Link Stack Editor
+   Pricing               Analytics & Settings
+                              │
+                              ▼
+                         Next.js App
+                              │
+             ┌────────────────┼────────────────┐
+             │                │                │
+           Auth           PostgreSQL        Storage
+             │                │                │
+             └────────────────┼────────────────┘
+                              │
+                           Supabase
+                              │
+             ┌────────────────┼────────────────┐
+             │                │                │
+          Analytics        Payments          Email
+                            Stripe           Resend
+                              │
+                           Vercel
+```
