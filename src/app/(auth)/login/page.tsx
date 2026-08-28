@@ -26,7 +26,7 @@ export default function LoginPage() {
 
   return (
     <div className="page loaded">
-      {/* Background Elements */}
+      {/* Linktree Atmosphere */}
       <div className="bg-wrap">
         <FluidCanvas />
         <div className="bg-vignette" />
@@ -44,43 +44,46 @@ export default function LoginPage() {
         </Link>
 
         <div className="flex items-center gap-4">
-          <Link href="/signup" className="footer-link font-extrabold text-sm">
-            Need an account? Sign up
+          <Link href="/signup" className="linktree-btn linktree-btn-purple">
+            Sign up free
           </Link>
           <ThemeToggle />
         </div>
       </header>
 
-      {/* Auth Main Card */}
+      {/* Auth Main Pill Card */}
       <main className="main py-12 flex items-center justify-center">
-        <div className="w-full max-w-md p-8 sm:p-10 rounded-3xl bg-white text-[#1E2330] shadow-2xl flex flex-col gap-6">
-          <div className="text-center flex flex-col gap-1">
-            <h1 className="text-3xl font-extrabold tracking-tight">Welcome back</h1>
-            <p className="text-sm font-semibold text-gray-500">Log in to your VYB dashboard</p>
+        <div className="w-full max-w-md p-8 sm:p-10 rounded-[40px] bg-[#FFFFFF] text-[#1E2330] shadow-2xl flex flex-col gap-6 border-4 border-[#D2E823]">
+          <div className="text-center flex flex-col gap-2">
+            <span className="px-4 py-1.5 rounded-full bg-[#7800FF] text-white font-extrabold text-xs tracking-wider uppercase mx-auto">
+              VYB AUTH
+            </span>
+            <h1 className="text-4xl font-extrabold tracking-tight text-[#254F1A]">Welcome back</h1>
+            <p className="text-sm font-bold text-gray-500">Log in to manage your link in bio</p>
           </div>
 
           {errorMsg && (
-            <div className="p-4 rounded-2xl bg-red-100 border border-red-200 text-red-700 font-bold text-xs">
+            <div className="p-4 rounded-full bg-red-100 border border-red-300 text-red-700 font-extrabold text-xs text-center">
               {errorMsg}
             </div>
           )}
 
           <form onSubmit={handleSubmit} className="flex flex-col gap-4">
             <div className="flex flex-col gap-1.5">
-              <label className="font-extrabold text-xs text-gray-700 uppercase tracking-wider">
-                Email
+              <label className="font-extrabold text-xs text-[#254F1A] uppercase tracking-wider px-2">
+                Email Address
               </label>
               <input
                 type="email"
                 name="email"
                 required
                 placeholder="your@email.com"
-                className="w-full px-4 py-3 rounded-2xl border-2 border-gray-200 font-bold text-sm focus:border-[#7800FF] focus:outline-none"
+                className="w-full px-6 py-4 rounded-full border-2 border-gray-200 font-bold text-base focus:border-[#7800FF] focus:outline-none"
               />
             </div>
 
             <div className="flex flex-col gap-1.5">
-              <label className="font-extrabold text-xs text-gray-700 uppercase tracking-wider">
+              <label className="font-extrabold text-xs text-[#254F1A] uppercase tracking-wider px-2">
                 Password
               </label>
               <input
@@ -88,23 +91,23 @@ export default function LoginPage() {
                 name="password"
                 required
                 placeholder="••••••••••••"
-                className="w-full px-4 py-3 rounded-2xl border-2 border-gray-200 font-bold text-sm focus:border-[#7800FF] focus:outline-none"
+                className="w-full px-6 py-4 rounded-full border-2 border-gray-200 font-bold text-base focus:border-[#7800FF] focus:outline-none"
               />
             </div>
 
             <button
               type="submit"
               disabled={loading}
-              className="w-full py-4 rounded-full bg-[#7800FF] text-white font-extrabold text-base hover:bg-purple-700 transition-all cursor-pointer mt-2 disabled:opacity-50"
+              className="w-full py-4 rounded-full bg-[#7800FF] text-white font-extrabold text-lg hover:bg-purple-700 transition-all cursor-pointer mt-2 disabled:opacity-50 shadow-xl"
             >
-              {loading ? "Signing in..." : "Log In"}
+              {loading ? "Signing in..." : "Log In to Dashboard ↗"}
             </button>
           </form>
         </div>
       </main>
 
       <footer className="footer">
-        <div>© 2026 VYB Auth. Secure Sessions.</div>
+        <div>© 2026 VYB. Secure Sign In.</div>
       </footer>
     </div>
   );
