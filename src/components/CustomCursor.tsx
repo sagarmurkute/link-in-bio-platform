@@ -45,17 +45,17 @@ export function CustomCursor() {
   }, [pos.x, pos.y]);
 
   return (
-    <>
+    <div className="fixed inset-0 pointer-events-none z-[10000] mix-blend-difference hidden sm:block">
       <div
-        className="fixed pointer-events-none z-50 w-2 h-2 rounded-full bg-[var(--fg)] -translate-x-1/2 -translate-y-1/2 transition-transform duration-75"
+        className="absolute w-1 h-1 bg-white rounded-full -translate-x-1/2 -translate-y-1/2"
         style={{ left: `${pos.x}px`, top: `${pos.y}px` }}
       />
       <div
-        className={`fixed pointer-events-none z-50 w-8 h-8 rounded-full border border-[var(--fg)] -translate-x-1/2 -translate-y-1/2 transition-all duration-200 ${
-          isHovered ? "scale-150 opacity-40 bg-[var(--fg)]" : "opacity-30"
+        className={`absolute rounded-full border border-white/40 -translate-x-1/2 -translate-y-1/2 transition-all duration-300 ${
+          isHovered ? "w-16 h-16 border-white/20 bg-white/5" : "w-7 h-7"
         }`}
         style={{ left: `${ringPos.x}px`, top: `${ringPos.y}px` }}
       />
-    </>
+    </div>
   );
 }
