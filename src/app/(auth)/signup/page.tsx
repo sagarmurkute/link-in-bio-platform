@@ -26,7 +26,7 @@ export default function SignupPage() {
 
   return (
     <div className="page loaded">
-      {/* Linktree Atmosphere */}
+      {/* Background Atmosphere */}
       <div className="bg-wrap">
         <FluidCanvas />
         <div className="bg-vignette" />
@@ -44,49 +44,49 @@ export default function SignupPage() {
         </Link>
 
         <div className="flex items-center gap-4">
-          <Link href="/login" className="linktree-btn linktree-btn-purple">
+          <Link href="/login" className="vyb-btn vyb-btn-secondary">
             Log in
           </Link>
           <ThemeToggle />
         </div>
       </header>
 
-      {/* Signup Pill Card */}
+      {/* Signup Subtle Card */}
       <main className="main py-12 flex items-center justify-center">
-        <div className="w-full max-w-md p-8 sm:p-10 rounded-[40px] bg-[#FFFFFF] text-[#1E2330] shadow-2xl flex flex-col gap-6 border-4 border-[#D2E823]">
+        <div className="w-full max-w-md p-8 sm:p-10 rounded-[36px] bg-[#FFFFFF] text-[#1E2330] shadow-[0_20px_60px_rgba(0,0,0,0.06)] border border-[#D6D6BE]/50 flex flex-col gap-6">
           <div className="text-center flex flex-col gap-2">
-            <span className="px-4 py-1.5 rounded-full bg-[#254F1A] text-[#D2E823] font-extrabold text-xs tracking-wider uppercase mx-auto">
+            <span className="px-4 py-1.5 rounded-full bg-[#FF0000]/10 text-[#FF0000] font-extrabold text-xs tracking-wider uppercase mx-auto">
               CLAIM HANDLE
             </span>
-            <h1 className="text-4xl font-extrabold tracking-tight text-[#254F1A]">Create your VYB</h1>
-            <p className="text-sm font-bold text-gray-500">Claim your username & build your link stack</p>
+            <h1 className="text-4xl font-extrabold tracking-tight text-[#000000]">Create your VYB</h1>
+            <p className="text-sm font-semibold text-gray-500">Claim your username & build your link stack</p>
           </div>
 
           {errorMsg && (
-            <div className="p-4 rounded-full bg-red-100 border border-red-300 text-red-700 font-extrabold text-xs text-center">
+            <div className="p-4 rounded-full bg-red-50 border border-red-200 text-red-700 font-extrabold text-xs text-center">
               {errorMsg}
             </div>
           )}
 
           <form onSubmit={handleSubmit} className="flex flex-col gap-4">
             <div className="flex flex-col gap-1.5">
-              <label className="font-extrabold text-xs text-[#254F1A] uppercase tracking-wider px-2">
+              <label className="font-extrabold text-xs text-[#000000] uppercase tracking-wider px-2">
                 Choose Handle
               </label>
-              <div className="flex items-center rounded-full border-2 border-gray-200 px-6 py-2 focus-within:border-[#254F1A]">
+              <div className="flex items-center rounded-full border border-gray-200 px-6 py-2 focus-within:border-[#FF0000] transition-colors">
                 <span className="font-extrabold text-base text-gray-400 select-none">@</span>
                 <input
                   type="text"
                   name="username"
                   required
                   placeholder="yourname"
-                  className="w-full px-2 py-2 font-extrabold text-base focus:outline-none text-[#1E2330]"
+                  className="w-full px-2 py-2 font-extrabold text-base focus:outline-none text-[#000000]"
                 />
               </div>
             </div>
 
             <div className="flex flex-col gap-1.5">
-              <label className="font-extrabold text-xs text-[#254F1A] uppercase tracking-wider px-2">
+              <label className="font-extrabold text-xs text-[#000000] uppercase tracking-wider px-2">
                 Email Address
               </label>
               <input
@@ -94,12 +94,12 @@ export default function SignupPage() {
                 name="email"
                 required
                 placeholder="your@email.com"
-                className="w-full px-6 py-4 rounded-full border-2 border-gray-200 font-bold text-base focus:border-[#254F1A] focus:outline-none"
+                className="w-full px-6 py-4 rounded-full border border-gray-200 font-bold text-base focus:border-[#FF0000] focus:outline-none transition-colors"
               />
             </div>
 
             <div className="flex flex-col gap-1.5">
-              <label className="font-extrabold text-xs text-[#254F1A] uppercase tracking-wider px-2">
+              <label className="font-extrabold text-xs text-[#000000] uppercase tracking-wider px-2">
                 Password
               </label>
               <input
@@ -107,14 +107,14 @@ export default function SignupPage() {
                 name="password"
                 required
                 placeholder="••••••••••••"
-                className="w-full px-6 py-4 rounded-full border-2 border-gray-200 font-bold text-base focus:border-[#254F1A] focus:outline-none"
+                className="w-full px-6 py-4 rounded-full border border-gray-200 font-bold text-base focus:border-[#FF0000] focus:outline-none transition-colors"
               />
             </div>
 
             <button
               type="submit"
               disabled={loading}
-              className="w-full py-4 rounded-full bg-[#254F1A] text-[#D2E823] font-extrabold text-lg hover:bg-green-900 transition-all cursor-pointer mt-2 disabled:opacity-50 shadow-xl"
+              className="vyb-btn w-full py-4 mt-2 justify-center text-center cursor-pointer disabled:opacity-50"
             >
               {loading ? "Creating account..." : "Claim My Handle ↗"}
             </button>
