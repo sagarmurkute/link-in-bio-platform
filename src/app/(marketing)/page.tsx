@@ -28,7 +28,7 @@ export default function HomePage() {
           <Link href="/login" className="linktree-btn linktree-btn-purple">
             Log in
           </Link>
-          <Link href="/login" className="linktree-btn hidden sm:inline-flex">
+          <Link href="/signup" className="linktree-btn hidden sm:inline-flex">
             Sign up free
           </Link>
         </div>
@@ -44,7 +44,7 @@ export default function HomePage() {
           </h1>
 
           <p className="sub">
-            Join 50M+ creators using VYB for their link in bio. One link to help you share everything you create, curate and sell from your Instagram, TikTok, Twitter, YouTube and other profiles.
+            Join creators using VYB for their link in bio. One link to help you share everything you create, curate and sell from your Instagram, TikTok, Twitter, YouTube and other profiles.
           </p>
 
           <WaitlistForm />
@@ -94,8 +94,8 @@ export default function HomePage() {
         </div>
         <div className="flex items-center gap-6">
           <Link href="/manifesto" className="footer-link">Manifesto</Link>
+          <Link href="/pricing" className="footer-link">Pricing</Link>
           <a href="https://github.com/sagarmurkute" target="_blank" rel="noopener noreferrer" className="footer-link">GitHub</a>
-          <a href="https://x.com/SagarMurku54849" target="_blank" rel="noopener noreferrer" className="footer-link">X</a>
         </div>
       </footer>
     </div>
