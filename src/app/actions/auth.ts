@@ -6,7 +6,9 @@ import { redirect } from "next/navigation";
 const RESERVED_USERNAMES = [
   "admin", "api", "login", "signup", "dashboard", "settings",
   "help", "about", "pricing", "manifesto", "auth", "public",
-  "legacy", "carousel", "terms", "privacy", "docs", "support"
+  "legacy", "carousel", "terms", "privacy", "docs", "support",
+  "onboarding", "editor", "cookies", "acceptable-use", "features",
+  "changelog", "contact", "verify-email", "forgot-password", "reset-password"
 ];
 
 export async function loginAction(formData: FormData) {
@@ -44,7 +46,7 @@ export async function signupAction(formData: FormData) {
     return { error: "Username must be 3-20 characters long and contain only letters, numbers, and underscores." };
   }
 
-  // Check reserved usernames
+  // Check reserved usernames against platform route hierarchy
   if (RESERVED_USERNAMES.includes(username)) {
     return { error: `The handle @${username} is reserved by the platform. Please select another.` };
   }

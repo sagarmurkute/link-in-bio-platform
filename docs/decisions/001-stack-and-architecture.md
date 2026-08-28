@@ -19,24 +19,20 @@ VYB is an account-based link-in-bio platform designed to unify scattered online 
 | **Icons** | Lucide React + Inline SVGs | Scalable vector icons for social media and navigation |
 | **Hosting** | Vercel | Global edge deployment, fast TTFB, and Vercel Analytics |
 
-## Page Map & Route Architecture
+## Master Route Hierarchy
 
-| Route | Route Group | Description | Status |
-| :--- | :--- | :--- | :--- |
-| `/` | `(marketing)` | VYB Home / Hero Page & Claim Bar | Active |
-| `/manifesto` | `(marketing)` | Philosophy & Editorial Manifesto | Active |
-| `/pricing` | `(marketing)` | Plan Tiers & Pro Features | Planned |
-| `/about` | `(marketing)` | About VYB Platform | Planned |
-| `/login` | `(auth)` | User Authentication & Sign In | Active |
-| `/signup` | `(auth)` | Account Registration & Handle Claim | Active |
-| `/forgot-password` | `(auth)` | Password Reset Request | Planned |
-| `/reset-password` | `(auth)` | Password Reset Token Handler | Planned |
-| `/dashboard` | `(dashboard)` | Control Center & Profile Overview | Active |
-| `/editor` | `(dashboard)` | Interactive Profile Builder & Link Stack Manager | Active |
-| `/analytics` | `(dashboard)` | Profile Views & Link Click Insights | Active |
-| `/settings` | `(dashboard)` | User Account & Handle Settings | Active |
-| `/[username]` | Public Handle | Dynamic Public Profile Engine (`getvyb.vercel.app/username`) | Active |
-| `/api/*` | Developer API | Public & Private Platform Endpoints | Planned |
+```
+VYB
+├── PUBLIC / MARKETING: / , /manifesto , /about , /pricing , /features , /changelog , /contact
+├── AUTHENTICATION: /login , /signup , /forgot-password , /reset-password , /verify-email
+├── ONBOARDING: /onboarding , /onboarding/* (username, profile, links, appearance, complete)
+├── USER DASHBOARD: /dashboard , /dashboard/* (profile, links, appearance, analytics, settings)
+├── PROFILE EDITOR: /editor
+├── SETTINGS: /settings , /settings/* (account, profile, security, notifications, billing, danger-zone)
+├── PUBLIC USER PROFILES: /[username]
+├── LEGAL: /privacy , /terms , /cookies , /acceptable-use
+└── ADMIN: /admin , /admin/* (users, profiles, reports, analytics, settings)
+```
 
 ## Rules Enforced
 1. Build phase by phase with verification after each milestone.
