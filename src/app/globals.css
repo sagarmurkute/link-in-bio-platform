@@ -88,7 +88,7 @@ body {
   font-weight: 700;
 }
 
-/* Subtle Pill Buttons (No hard borders) */
+/* Subtle Pill Buttons */
 .vyb-btn {
   height: 52px;
   padding: 0 30px;
@@ -218,7 +218,7 @@ body {
     radial-gradient(80% 80% at 15% 85%, rgba(232, 232, 210, 0.3) 0%, transparent 60%);
 }
 
-/* Layout */
+/* Base Page Wrapper */
 .page {
   min-height: 100vh;
   display: flex;
@@ -229,11 +229,11 @@ body {
 
 .header {
   position: relative;
-  z-index: 10;
+  z-index: 50;
   width: 100%;
   max-width: 1440px;
   margin: 0 auto;
-  padding: 28px 40px;
+  padding: 24px 40px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -261,37 +261,7 @@ body {
   box-shadow: 0 6px 18px rgba(255, 0, 0, 0.3);
 }
 
-.main {
-  flex: 1;
-  width: 100%;
-  max-width: 1440px;
-  margin: 0 auto;
-  padding: 0 40px;
-  display: grid;
-  grid-template-columns: 1.2fr 0.8fr;
-  gap: 48px;
-  align-items: center;
-}
-
-.headline {
-  font-size: clamp(52px, 7.5vw, 110px);
-  line-height: 0.92;
-  letter-spacing: -0.04em;
-  margin-bottom: 28px;
-  font-weight: 900;
-  color: #000000;
-}
-
-.sub {
-  max-width: 520px;
-  font-size: 20px;
-  line-height: 1.5;
-  color: #2A2A2A;
-  font-weight: 600;
-  margin-bottom: 36px;
-}
-
-/* Subtle VYB Social Link Cards (No brutalist borders) */
+/* Subtle VYB Social Link Cards */
 .vyb-card-stack {
   display: flex;
   flex-direction: column;
@@ -366,15 +336,8 @@ body {
   color: #FF0000;
 }
 
-@media (max-width: 1024px) {
-  .main { grid-template-columns: 1fr; gap: 36px; text-align: center; }
-  .claim-bar { margin: 0 auto; }
-  .sub { margin: 0 auto 36px; }
-}
-
 @media (max-width: 640px) {
   .header { padding: 20px; }
-  .main { padding: 0 20px; }
   .footer { padding: 20px; flex-direction: column; gap: 16px; }
   .claim-bar { height: auto; flex-direction: column; padding: 12px; border-radius: 28px; gap: 10px; }
   .claim-btn { width: 100%; justify-content: center; }
